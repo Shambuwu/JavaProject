@@ -22,6 +22,7 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     private int gameLanguage;
+    private Player player;
         
     /**
      * Create the game and initialise its internal map.
@@ -62,7 +63,8 @@ public class Game
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
-    {           
+    {
+        player = new Player();
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
