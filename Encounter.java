@@ -31,23 +31,32 @@ public class Encounter{
             enemy = new Enemy(enemyStats);
             System.out.println("You encounter an " + enemyStats.getName(0));
         }
+        scanner.nextLine();
         System.out.println("Your health is: " + player.getPlayerHealth());
         System.out.println("Their health is: " + enemy.getEnemyHealth());
-        encounterStart();
+        if(encounterStart() == false){
+            System.out.println("You die. Too bad.");
+        }
     }
 
+    public boolean hasWonFight = false;    
     public boolean encounterStart(){
-        boolean hasWonFight = false;
 
         while(hasWonFight == false){
-            playerChoice();
-            System.out.println("Their health is: " + enemy.getEnemyHealth());
-            if(enemy.getEnemyHealth() <= 0){
-                System.out.println("You kill the " + enemy.getType());
-                hasWonFight = true;
-            }    
-            enemyChoice();
-            System.out.println("Your health is: " + player.getPlayerHealth()); 
+            if(hasWonFight == false){
+                playerChoice();
+                if(enemy.getEnemyHealth() <= 0){
+                    System.out.println("You kill the " + enemy.getType());
+                    hasWonFight = true;
+                }
+            }
+            if(hasWonFight == false){   
+                enemyChoice();
+                System.out.println("Your health is: " + player.getPlayerHealth());
+                if(player.getPlayerHealth() <= 0){
+                    return false;
+                }
+            }
         }
 
         System.out.println("You gain 20xp!");
@@ -65,6 +74,11 @@ public class Encounter{
             case 1:
                 enemy.setEnemyDamage(player.getPlayerStrength());
                 System.out.println("You hit the " + enemy.getType() + " for " + player.getPlayerStrength() + " damage!");
+                System.out.println("Their health is: " + enemy.getEnemyHealth());
+                scanner.nextLine();
+                break;
+            case 2:
+                if(run() == true) hasWonFight = true;
                 scanner.nextLine();
                 break;
             default:
@@ -73,9 +87,21 @@ public class Encounter{
         }
     }
 
-    public void enemyChoice(){
+    private void enemyChoice(){
         System.out.println("The " + enemy.getType() + " strikes!");
         player.setPlayerDamage(enemy.getStrength());
         scanner.nextLine();
+    }
+
+    private boolean run(){
+        System.out.println("You try to run...");
+        scanner.nextLine();
+        if(rand.nextInt(10) > 7){
+            System.out.println("Success!");
+            return true;
+        } else {
+            System.out.println("Your attempt to escape has failed!");
+            return false;
+        }
     }
 }
