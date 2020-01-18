@@ -29,6 +29,7 @@ public class Player{
         for(String answer : Dialogue.answer[gameLanguage]){
             System.out.println("* " + answer);
         }
+        System.out.print("> ");
         String answer = scanner.nextLine();
         if(answer.toLowerCase().equals(Dialogue.answer[gameLanguage][0])){
             System.out.println(Dialogue.response[gameLanguage][15]);

@@ -18,25 +18,25 @@ public class Encounter{
         if(randomEnemy < 40){
             enemyStats = EnemyStats.GOBLIN;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter a " + enemyStats.getName(0) + "!");
+            System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
         } else if(randomEnemy >= 40 && randomEnemy < 70){
             enemyStats = EnemyStats.KOBOLD;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter a " + enemyStats.getName(0) + "!");
+            System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
         } else if(randomEnemy >= 70 && randomEnemy < 90){
             enemyStats = EnemyStats.GNOLL;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter a " + enemyStats.getName(0) + "!");
+            System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
         } else if(randomEnemy >= 90){
             enemyStats = EnemyStats.OGRE;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter an " + enemyStats.getName(0) + "!");
+            System.out.println(Dialogue.response[Game.gameLanguage][23] + enemyStats.getName(0) + "!");
         }
         scanner.nextLine();
-        System.out.println("Your health is: " + player.getPlayerHealth());
-        System.out.println("Their health is: " + enemy.getEnemyHealth() + "\n");
+        System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth());
+        System.out.println(Dialogue.response[Game.gameLanguage][25] + enemy.getEnemyHealth() + "\n");
         if(encounterStart() == false){
-            System.out.println("You die. Too bad.");
+            System.out.println(Dialogue.response[Game.gameLanguage][26]);
         }
     }
 
@@ -47,13 +47,13 @@ public class Encounter{
             if(hasWonFight == false){
                 playerChoice();
                 if(enemy.getEnemyHealth() <= 0){
-                    System.out.println("You kill the " + enemy.getType());
+                    System.out.println(Dialogue.combat[Game.gameLanguage][0] + enemy.getType());
                     hasWonFight = true;
                 }
             }
             if(hasWonFight == false){   
                 enemyChoice();
-                System.out.println("Your health is: " + player.getPlayerHealth());
+                System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth());
                 if(player.getPlayerHealth() <= 0){
                     return false;
                 }
@@ -66,18 +66,18 @@ public class Encounter{
     }
 
     public void playerChoice(){
-        System.out.println("What will you do?");
+        System.out.println(Dialogue.combat[Game.gameLanguage][1]);
         System.out.println("-----------------");
-        System.out.println("1. Attack");
-        System.out.println("2. Run");
+        System.out.println(Dialogue.combat[Game.gameLanguage][2]);
+        System.out.println(Dialogue.combat[Game.gameLanguage][3]);
         System.out.print("> ");
         int choice = scanner.nextInt();
         switch(choice){
             case 1:
                 int damage = player.getPlayerStrength() + rand.nextInt(10);
                 enemy.setEnemyDamage(damage);
-                System.out.println("You hit the " + enemy.getType() + " for " + damage + " damage!");
-                System.out.println("Their health is: " + enemy.getEnemyHealth());
+                System.out.println(Dialogue.combat[Game.gameLanguage][4] + enemy.getType() + Dialogue.combat[Game.gameLanguage][5] + damage + Dialogue.combat[Game.gameLanguage][6]);
+                System.out.println(Dialogue.response[Game.gameLanguage][25] + enemy.getEnemyHealth());
                 scanner.nextLine();
                 break;
             case 2:
@@ -85,27 +85,27 @@ public class Encounter{
                 scanner.nextLine();
                 break;
             default:
-                System.out.println("Invalid answer!");
+                System.out.println(Dialogue.response[Game.gameLanguage][18]);
                 playerChoice();
         }
     }
 
     private void enemyChoice(){
         int damage = enemy.getStrength() + rand.nextInt(10);
-        System.out.println("The " + enemy.getType() + " strikes!");
-        System.out.println("They hit for " + damage + " damage!");
+        System.out.println(Dialogue.combat[Game.gameLanguage][7] + enemy.getType() + Dialogue.combat[Game.gameLanguage][8]);
+        System.out.println(Dialogue.combat[Game.gameLanguage][9] + damage + Dialogue.combat[Game.gameLanguage][10]);
         player.setPlayerDamage(damage);
         scanner.nextLine();
     }
 
     private boolean run(){
-        System.out.println("You try to run...");
+        System.out.println(Dialogue.combat[Game.gameLanguage][11]);
         scanner.nextLine();
-        if(rand.nextInt(10) > 7){
-            System.out.println("Success!");
+        if(rand.nextInt(10) > 6){
+            System.out.println(Dialogue.combat[Game.gameLanguage][12]);
             return true;
         } else {
-            System.out.println("Your attempt to escape has failed!");
+            System.out.println(Dialogue.combat[Game.gameLanguage][13]);
             return false;
         }
     }

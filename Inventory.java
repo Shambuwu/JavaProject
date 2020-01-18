@@ -15,19 +15,19 @@ public class Inventory{
     public void getInventory(){
         int y = 1;
         if(inventory.size() != 0){
-            System.out.println("Your inventory contains: ");
+            System.out.println(Dialogue.response[Game.gameLanguage][19]);
             for(Item i : inventory){
                 System.out.println("" + y + ". " + i.getItemName());
                 y++;
             }
-        } else System.out.println("Your inventory is empty!");
+        } else System.out.println(Dialogue.response[Game.gameLanguage][20]);
 
     }
 
     public int useItem(int item){
         for(int i = 0; i < inventory.size(); i++){
             if(i == (item - 1)){
-                System.out.println("You used the " + inventory.get(i).getItemName());
+                System.out.println(Dialogue.response[Game.gameLanguage][21] + inventory.get(i).getItemName());
                 int value = inventory.get(i).getItemValue();
                 inventory.remove(i);
                 return value;

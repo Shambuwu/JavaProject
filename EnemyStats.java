@@ -1,8 +1,8 @@
 public enum EnemyStats{
-    GOBLIN(30, 4, 5, Dialogue.enemy[Game.gameLanguage][0]),
-    KOBOLD(40, 6, 4, Dialogue.enemy[Game.gameLanguage][1]),
-    OGRE(80, 7, 1, Dialogue.enemy[Game.gameLanguage][2]),
-    GNOLL(40, 5, 9, Dialogue.enemy[Game.gameLanguage][3]);
+    GOBLIN(15, 2, 5, Dialogue.enemy[Game.gameLanguage][0]),
+    KOBOLD(20, 3, 4, Dialogue.enemy[Game.gameLanguage][1]),
+    OGRE(50, 13, 1, Dialogue.enemy[Game.gameLanguage][2]),
+    GNOLL(40, 7, 9, Dialogue.enemy[Game.gameLanguage][3]);
 
     private int health;
     private int strength;

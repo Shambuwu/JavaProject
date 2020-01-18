@@ -164,7 +164,7 @@ public class Game
      */
     private void useItem(Command command){
         if(!command.hasSecondWord()){
-            System.out.println("Use what?");
+            System.out.println(Dialogue.response[Game.gameLanguage][27]);
             return;
         }
 
@@ -172,11 +172,11 @@ public class Game
         try {
             int item = Integer.parseInt(use);
             player.setPlayerHeal(player.getInventory().useItem(item));
-            System.out.println("Your health is: " + player.getPlayerHealth());
+            System.out.println(Dialogue.response[Game.gameLanguage][24]+ player.getPlayerHealth());
          }
          catch (NumberFormatException e)
          {
-            System.out.println("Try the number of the item you're trying to use.");
+            System.out.println(Dialogue.response[Game.gameLanguage][27]);
          }
     }
 
@@ -216,7 +216,7 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
-            if(rand.nextInt(10) > 8){
+            if(rand.nextInt(10) > 7){
                 Encounter fight = new Encounter(player);
             } else if(steps == 5){
                 Encounter fight = new Encounter(player);
