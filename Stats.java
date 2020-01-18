@@ -1,7 +1,7 @@
 public enum Stats{
-    KNIGHT(70, 8, 4, Dialogue.player[Game.gameLanguage][0]),
-    ASSASSIN(50, 9, 7, Dialogue.player[Game.gameLanguage][1]),
-    MAGE(40, 10, 4, Dialogue.player[Game.gameLanguage][2]);
+    KNIGHT(70, 6, 4, Dialogue.player[Game.gameLanguage][0]),
+    ASSASSIN(40, 9, 7, Dialogue.player[Game.gameLanguage][1]),
+    MAGE(35, 13, 4, Dialogue.player[Game.gameLanguage][2]);
 
     private int health;
     private int strength;

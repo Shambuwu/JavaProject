@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
+import java.util.HashMap;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -23,7 +24,9 @@ public class Game
     private Parser parser;
     private Room currentRoom;
     public static int gameLanguage;
+    public static Difficulty gameDifficulty;
     private Player player;
+    public HashMap<Room, Integer> map;
         
     /**
      * Create the game and initialise its internal map.
@@ -41,21 +44,29 @@ public class Game
      */
     private void createRooms()
     {
-        Room outside, theater, pub, lab, office;
+        Room outside, castle, garden, wall, dungeon;
+        map = new HashMap<>();
       
         // create the rooms
         outside = new Room(Dialogue.description[gameLanguage][0]);
-        theater = new Room(Dialogue.description[gameLanguage][1]);
-        pub = new Room(Dialogue.description[gameLanguage][2]);
-        lab = new Room(Dialogue.description[gameLanguage][3]);
-        office = new Room(Dialogue.description[gameLanguage][4]);
+        castle = new Room(Dialogue.description[gameLanguage][1]);
+        garden = new Room(Dialogue.description[gameLanguage][2]);
+        wall = new Room(Dialogue.description[gameLanguage][3]);
+        dungeon = new Room(Dialogue.description[gameLanguage][4]);
+
+        //set the rooms in the hashmap
+        map.put(outside, 0);
+        map.put(castle, 1);
+        map.put(garden, 2);
+        map.put(wall, 3);
+        map.put(dungeon, 4);
         
         // initialise room exits
-        outside.setExits(null, theater, lab, pub);
-        theater.setExits(null, null, null, outside);
-        pub.setExits(null, outside, null, null);
-        lab.setExits(outside, office, null, null);
-        office.setExits(null, null, null, lab);
+        outside.setExits(null, castle, garden, wall);
+        castle.setExits(null, null, null, outside);
+        wall.setExits(null, outside, null, null);
+        garden.setExits(outside, dungeon, null, null);
+        dungeon.setExits(null, null, null, garden);
 
         currentRoom = outside;  // start game outside
     }
@@ -66,6 +77,7 @@ public class Game
     public void play() 
     {
         player = new Player();
+        setDifficulty();
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -135,6 +147,8 @@ public class Game
             player.getPlayerInventory();
         } else if (commandWord.equals(commands[4])) {
             useItem(command);
+        } else if (commandWord.equals(commands[5])){
+            lookAround();
         }
 
         return wantToQuit;
@@ -157,6 +171,48 @@ public class Game
             System.out.println("   " + (i + 1) + ". " +CommandWords.validCommands[i]);
         }
         System.out.println();
+    }
+
+    /**
+     * Look around
+     */
+    public void lookAround(){
+        Random rand = new Random();
+        System.out.println(Dialogue.view[gameLanguage][map.get(currentRoom)][rand.nextInt(2)]);
+    }
+
+    /**
+     * Set game difficulty
+     */
+    public void setDifficulty(){
+        Scanner scanner = new Scanner(System.in);
+        int y = 1;
+        System.out.println(Dialogue.response[gameLanguage][29]);
+        for(String i : Dialogue.difficulty[gameLanguage]){
+            System.out.println("" + y + ". " + i);
+            y++;
+        }
+        System.out.print("> ");
+
+        int input = scanner.nextInt();
+        switch(input){
+            case 1:
+                gameDifficulty = Difficulty.EASY;
+                System.out.println(Dialogue.response[Game.gameLanguage][30]);
+                break;
+            case 2:
+                gameDifficulty = Difficulty.MEDIUM;
+                System.out.println(Dialogue.response[Game.gameLanguage][30]);
+                break;
+            case 3:
+                gameDifficulty = Difficulty.HARD;
+                System.out.println(Dialogue.response[Game.gameLanguage][30]);
+                break;
+            default:
+                System.out.println(Dialogue.response[Game.gameLanguage][18]);
+                setDifficulty();
+                break;
+        }
     }
 
     /**

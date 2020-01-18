@@ -10,9 +10,9 @@ public enum EnemyStats{
     private String name;
 
     EnemyStats(int health, int strength, int speed, String name){
-        this.health = health;
-        this.strength = strength;
-        this.speed = speed;
+        this.health = (int) (health * Game.gameDifficulty.getDifficulty());
+        this.strength = (int) (strength * Game.gameDifficulty.getDifficulty());
+        this.speed = (int) (speed * Game.gameDifficulty.getDifficulty());
         this.name = name;
     }
 

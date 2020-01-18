@@ -80,7 +80,9 @@ public class Player{
     }
 
     public void setPlayerHeal(int heal){
-        playerHealth += heal;
+        if((playerHealth += heal) > playerStats.getHealth()){
+            playerHealth = playerStats.getHealth();
+        } else playerHealth += heal;
     }
 
     public int getPlayerHealth(){

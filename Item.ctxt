@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Item
+comment1.params=potion
+comment1.target=Item(Potions)
+comment2.params=
+comment2.target=java.lang.String\ getItemName()
+comment3.params=
+comment3.target=int\ getItemValue()
+numComments=4

@@ -35,14 +35,11 @@ public class Encounter{
         scanner.nextLine();
         System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth());
         System.out.println(Dialogue.response[Game.gameLanguage][25] + enemy.getEnemyHealth() + "\n");
-        if(encounterStart() == false){
-            System.out.println(Dialogue.response[Game.gameLanguage][26]);
-        }
+        encounterStart();
     }
 
     public boolean hasWonFight = false;    
     public boolean encounterStart(){
-
         while(hasWonFight == false){
             if(hasWonFight == false){
                 playerChoice();
@@ -50,13 +47,18 @@ public class Encounter{
                     System.out.println(Dialogue.combat[Game.gameLanguage][0] + enemy.getType());
                     hasWonFight = true;
                 }
+                scanner.nextLine();
             }
             if(hasWonFight == false){   
                 enemyChoice();
                 System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth());
                 if(player.getPlayerHealth() <= 0){
+                    System.out.println(Dialogue.response[Game.gameLanguage][26]);
+                    scanner.nextLine();
+                    System.exit(0);
                     return false;
                 }
+                scanner.nextLine();
             }
         }
 

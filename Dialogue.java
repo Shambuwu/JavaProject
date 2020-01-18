@@ -1,8 +1,8 @@
 public class Dialogue{
     public static String[][] response = {
-        {"Welcome to the World of Zuul!", "World of Zuul is a new, incredibly boring adventure game.", "Type 'help' if you need help.", "I don't know what you mean...", "You are lost. You are alone. You wander", "around at the university.", "Your command words are:", "   go quit help", "Go where?", "There is no door!", "You are ", "Exits: ", "Thank you for playing. Good bye!", "What is your name Hero?", "So your name is ", "That's a good name!", "Pardon?", "What is your profession ", "That's not a valid answer...", "Your inventory contains: ", "Your inventory is empty!", "You used the ", "You encounter a ", "You encounter an ", "Your health is: ", "Their health is: ", "You die. Too bad.", "Use what?", "Try the number of the item you're trying to use."},
-         //0                               1                                                            2                                3                                4                                          5                            6                          7                  8            9                   10          11          12                                  13                         14                  15                     16         17                          18                              19                           20                          21               22                  23                   24                  25                   26                   27           28
-        {"Welkom bij de World of Zuul!", "World of Zuul is een nieuw, ontzettend saai avonturenspel.", "Typ 'hulp' als je hulp nodig hebt.", "Ik weet niet wat je bedoelt...", "Je bent verdwaalt. Je bent alleen. Je wandelt", "rond de Universiteit.", "Je commando's zijn:", "   ga stop hulp", "Waarheen?", "Er is geen deur!", "Je bent ", "Uitgangen: ", "Bedankt voor het spelen. Fijne dag!", "Wat is je naam Held?", "Dus, je naam is ", "Dat is een goede naam!", "Excuses?", "Wat is je beroep ", "Dat is een ongeldig antwoord...", "Je inventaris bevat: ", "Je inventaris is leeg!", "Je gebruikte het ", "Er staat een ", "Er staat een ", "Je gezondheid is: ", "Hun gezondheid is: ", "Je sterft. Jammer.", "Wat gebruiken?", "Probeer het nummer van het object dat je wilt gebruiken."}
+        {"Welcome to the World of Zuul!", "World of Zuul is a new, incredibly boring adventure game.", "Type 'help' if you need help.", "I don't know what you mean...", "You are lost. You are alone. You wander", "around at the university.", "Your command words are:", "   go quit help", "Go where?", "There is no door!", "You are ", "Exits: ", "Thank you for playing. Good bye!", "What is your name Hero?", "So your name is ", "That's a good name!", "Pardon?", "What is your profession ", "That's not a valid answer...", "Your inventory contains: ", "Your inventory is empty!", "You used the ", "You encounter a ", "You encounter an ", "Your health is: ", "Their health is: ", "You die. Too bad.", "Use what?", "Try the number of the item you're trying to use.", "On what difficulty would you like to play?", "Difficulty has been set!"},
+         //0                               1                                                            2                                3                                4                                          5                            6                          7                  8            9                   10          11          12                                  13                         14                  15                     16         17                          18                              19                           20                          21               22                  23                   24                  25                   26                   27           28                                                  29                                            30
+        {"Welkom bij de World of Zuul!", "World of Zuul is een nieuw, ontzettend saai avonturenspel.", "Typ 'hulp' als je hulp nodig hebt.", "Ik weet niet wat je bedoelt...", "Je bent verdwaalt. Je bent alleen. Je wandelt", "rond de Universiteit.", "Je commando's zijn:", "   ga stop hulp", "Waarheen?", "Er is geen deur!", "Je bent ", "Uitgangen: ", "Bedankt voor het spelen. Fijne dag!", "Wat is je naam Held?", "Dus, je naam is ", "Dat is een goede naam!", "Excuses?", "Wat is je beroep ", "Dat is een ongeldig antwoord...", "Je inventaris bevat: ", "Je inventaris is leeg!", "Je gebruikte het ", "Er staat een ", "Er staat een ", "Je gezondheid is: ", "Hun gezondheid is: ", "Je sterft. Jammer.", "Wat gebruiken?", "Probeer het nummer van het object dat je wilt gebruiken.", "Op welke moeilijkheid wil je spelen?", "Moeilijkheid is vastgesteld!"}
     };
 
     public static String[][] direction = {
@@ -14,7 +14,7 @@ public class Dialogue{
     public static String[][] description = {
         {"outside the main entrance of the castle", "inside the castle", "in the castle garden", "on the high wall of the castle", "in the castle dungeon"},
         //0                                              1                       2                    3                     4                               
-        {"buiten de hoofdingang van het kasteel", "in het kasteel", "in de kasteeltuin", "op de hoge muur van het kasteel", "in de kasteelkerker"}
+        {"buiten de hoofdingang van het kasteel", "in het kasteel", "in de kasteeltuin", "op de muur van het koninkrijk", "in de kasteelkerker"}
     };
 
     public static String[][] answer = {
@@ -25,7 +25,7 @@ public class Dialogue{
 
     public static String[][] enemy = {
         {"Goblin", "Kobold", "Ogre", "Gnoll"},
-        {"Aardman", "Kabouter", "Ogre", "Gnoll"}
+        {"Aardman", "Kabouter", "Oger", "Gnol"}
     };
 
     public static String[][] item = {
@@ -39,13 +39,32 @@ public class Dialogue{
     };
 
     public static String[][] command = {
-        {"go", "quit", "help", "inventory", "use"}, //English
-        {"ga", "stop", "hulp", "inventaris", "gebruik"} //Dutch
+        {"go", "quit", "help", "inventory", "use", "look"}, //English
+        {"ga", "stop", "hulp", "inventaris", "gebruik", "kijken"} //Dutch
     };
 
     public static String[][] combat = {
         {"You kill the ", "What will you do?", "1. Attack", "2. Run", "You hit the ", " for ", " damage!", "The ", " strikes!", "They hit for ", " damage!", "You try to run...", "Success!", "Your attempt to flee has failed!"},
         //0                1                    2            3         4               5        6           7        8           9                10          11                   12          13       
         {"Je doodt de ", "Wat doe je?", "1. Aanvallen", "2. Rennen", "Je raakt de ", " en deelt ", " schade uit!", "De ", " slaat toe!", "Deze deelt ", " schade uit!", "Je probeert te weg te rennen...", "Succes!", "Je poging te ontsnappen is gefaald!"}
+    };
+
+    public static String[][] difficulty = {
+        {"Easy", "Medium", "Hard"},
+        {"Makkelijk", "Middelmatig", "Moeilijk"}
+    };
+
+    public static String[][][] view = {
+        {{"There is a dead body by the entrance.", "A big open door invites you to travel beyond.", "You hear a cry echo in the distance"},
+         {"There is an empty throne in front of you. 'I wonder who once sat there..'", "There's a piercing smell present", "It doesn't seem like there's anyone around"},
+         {"Dead flora is all over this garden.", "You spot a dog's corpse. 'Yuck!'", "You wonder if this garden has ever flourished"},
+         {"You're on the high wall of this kingdom", "You see an empty settlement in the distance", "Ivy has taken over a great part of  the wall"},
+         {"You see a human skeleton hanging on a wall mounted set of chains.", "You're almost unable to see through the darkness", "'I wonder how many people have been imprisoned in this accursed dungeon'"}},
+
+        {{"Er ligt een lijk bij de ingang.", "Een grote open deur nodigt je uit om verder te reizen.", "Je hoort een schreeuw in de verte."},
+         {"Er staat een lege troon voor je. 'Ik vraag me af wie daar ooit heeft gezeten...'", "er is een doordringende geur aanwezig", "Het lijkt er niet op dat er nog iemand is"},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Je staat op de hoge muur van dit koninkrijk.", "Je ziet een lege nederzetting in de verte.", "Klimop heeft een groot deel van de muur overgenomen."},
+         {"Je ziet het skelet van een mens hangend aan een wandkettingen set.", "Je kan bijna niet door de duisternis heen zien.", "'Ik vraag me af hoeveel mensen hier gevangen zijn geweest.'"}}
     };
 }
