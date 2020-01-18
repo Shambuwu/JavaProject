@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -21,7 +22,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    private int gameLanguage;
+    public static int gameLanguage;
+    private Player player;
         
     /**
      * Create the game and initialise its internal map.
@@ -62,7 +64,8 @@ public class Game
      *  Main play routine.  Loops until end of play.
      */
     public void play() 
-    {           
+    {
+        player = new Player();
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and
@@ -128,6 +131,10 @@ public class Game
         }
         else if (commandWord.equals(commands[1])) {
             wantToQuit = quit(command);
+        } else if (commandWord.equals(commands[3])) {
+            player.getPlayerInventory();
+        } else if (commandWord.equals(commands[4])) {
+            useItem(command);
         }
 
         return wantToQuit;
@@ -146,15 +153,41 @@ public class Game
         System.out.println(Dialogue.response[gameLanguage][5]);
         System.out.println();
         System.out.println(Dialogue.response[gameLanguage][6]);
-        System.out.println(Dialogue.response[gameLanguage][7]);
+        for(int i = 0; i < CommandWords.validCommands.length; i++) {
+            System.out.println("   " + (i + 1) + ". " +CommandWords.validCommands[i]);
+        }
+        System.out.println();
+    }
+
+    /**
+     * Use item in inventory
+     */
+    private void useItem(Command command){
+        if(!command.hasSecondWord()){
+            System.out.println(Dialogue.response[Game.gameLanguage][27]);
+            return;
+        }
+
+        String use = command.getSecondWord();
+        try {
+            int item = Integer.parseInt(use);
+            player.setPlayerHeal(player.getInventory().useItem(item));
+            System.out.println(Dialogue.response[Game.gameLanguage][24]+ player.getPlayerHealth());
+         }
+         catch (NumberFormatException e)
+         {
+            System.out.println(Dialogue.response[Game.gameLanguage][27]);
+         }
     }
 
     /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
      */
+    int steps = 1;
     private void goRoom(Command command) 
     {
+        Random rand = new Random();
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println(Dialogue.response[gameLanguage][8]);
@@ -183,6 +216,13 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
+            if(rand.nextInt(10) > 7){
+                Encounter fight = new Encounter(player);
+            } else if(steps == 5){
+                Encounter fight = new Encounter(player);
+                steps = 0;
+            }
+            steps++;
             System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
             System.out.print(Dialogue.response[gameLanguage][11]);
             if(currentRoom.northExit != null) {

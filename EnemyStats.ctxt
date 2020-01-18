@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=EnemyStats
+comment1.params=health\ strength\ speed\ name
+comment1.target=EnemyStats(int,\ int,\ int,\ java.lang.String[])
+comment2.params=
+comment2.target=int\ getHealth()
+comment3.params=
+comment3.target=int\ getStrength()
+comment4.params=
+comment4.target=int\ getSpeed()
+comment5.params=gameLanguage
+comment5.target=java.lang.String\ getName(int)
+numComments=6

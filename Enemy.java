@@ -1,0 +1,29 @@
+public class Enemy{
+    private String enemyType;
+    private int health;
+    private int strength;
+    private int speed;
+
+    public Enemy(EnemyStats enemyStats){
+        this.health = enemyStats.getHealth();
+        this.strength = enemyStats.getStrength();
+        this.speed = enemyStats.getSpeed();
+        this.enemyType = enemyStats.getName(0);
+    }
+
+    public String getType(){
+        return enemyType;
+    }
+
+    public int getStrength(){
+        return strength;
+    }
+    
+    public void setEnemyDamage(int damage){
+        health -= damage;
+    }
+
+    public int getEnemyHealth(){
+        return health;
+    }
+}

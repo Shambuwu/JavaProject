@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Encounter
+comment1.params=player
+comment1.target=Encounter(Player)
+comment2.params=
+comment2.target=boolean\ encounterStart()
+comment3.params=
+comment3.target=void\ playerChoice()
+comment4.params=
+comment4.target=void\ enemyChoice()
+numComments=5

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Languages
+comment1.params=language
+comment1.target=Languages(int)
+comment2.params=
+comment2.target=int\ getLanguage()
+numComments=3

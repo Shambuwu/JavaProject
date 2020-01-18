@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Player
+comment1.params=
+comment1.target=Player()
+comment2.params=
+comment2.target=void\ createPlayer()
+comment3.params=tempName
+comment3.target=boolean\ checkPlayerName(java.lang.String)
+comment4.params=
+comment4.target=void\ setPlayerStats()
+comment5.params=
+comment5.target=Stats\ getPlayerStats()
+comment6.params=
+comment6.target=int\ getPlayerHealth()
+comment7.params=damage
+comment7.target=void\ setPlayerDamage(int)
+comment8.params=
+comment8.target=java.lang.String\ getPlayerName()
+comment9.params=
+comment9.target=int\ getPlayerStrength()
+numComments=10
