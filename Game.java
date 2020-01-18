@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -157,6 +158,7 @@ public class Game
      */
     private void goRoom(Command command) 
     {
+        Random rand = new Random();
         if(!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
             System.out.println(Dialogue.response[gameLanguage][8]);
@@ -185,6 +187,9 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
+            //if(rand.nextInt(10) > 8){
+            Encounter fight = new Encounter(player);
+            //}
             System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
             System.out.print(Dialogue.response[gameLanguage][11]);
             if(currentRoom.northExit != null) {

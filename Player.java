@@ -3,6 +3,9 @@ import java.util.Scanner;
 public class Player{
     private Stats playerStats;
     private String playerName;
+    private int playerHealth;
+    private int playerStrength;
+    private int playerSpeed;
     private int gameLanguage = CommandWords.gameLanguage;
     Scanner scanner = new Scanner(System.in);
 
@@ -17,6 +20,7 @@ public class Player{
         if(tempName == "") createPlayer();
         if(checkPlayerName(tempName) == false) createPlayer();
         playerName = tempName;
+        setPlayerStats();
     }
 
     private boolean checkPlayerName(String tempName){
@@ -36,6 +40,55 @@ public class Player{
             checkPlayerName(tempName);
         }
 
-        return false;
+        return true;
+    }
+
+    public void setPlayerStats(){
+        System.out.println(Dialogue.response[gameLanguage][17] + playerName + "?");
+        int i = 1;
+        for(Stats name : Stats.values()){
+            System.out.println(""+ i + ". " + name.getName(gameLanguage));
+            i++;
+        }
+
+        int answer = scanner.nextInt();
+        switch (answer){
+            case 1: 
+                playerStats = Stats.KNIGHT;
+                break;
+            case 2:
+                playerStats = Stats.ASSASSIN;
+                break;
+            case 3:
+                playerStats = Stats.MAGE;
+                break;
+            default:
+                System.out.println(Dialogue.response[gameLanguage][18]);
+                setPlayerStats();
+        }
+        
+        playerHealth = playerStats.getHealth();
+        playerStrength = playerStats.getStrength();
+        playerSpeed = playerStats.getSpeed();
+    }
+
+    public Stats getPlayerStats(){
+        return playerStats;
+    }
+
+    public int getPlayerHealth(){
+        return playerHealth;
+    }
+
+    public void setPlayerDamage(int damage){
+        playerHealth -= damage;
+    }
+
+    public String getPlayerName(){
+        return playerName;
+    }
+
+    public int getPlayerStrength(){
+        return playerStrength;
     }
 }

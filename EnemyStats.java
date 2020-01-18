@@ -1,14 +1,15 @@
-public enum Stats{
-    KNIGHT(70, 8, 4, new String[] {"Knight", "Ridder"}),
-    ASSASSIN(50, 9, 7, new String[] {"Assassin", "Sluipmoordenaar"}),
-    MAGE(40, 10, 4, new String[] {"Mage", "Magier"});
+public enum EnemyStats{
+    GOBLIN(30, 4, 5, new String[] {"Goblin", "Aardmannetje"}),
+    KOBOLD(40, 6, 4, new String[] {"Kobold", "Kabouter"}),
+    OGRE(80, 7, 1, new String[] {"Ogre", "Oger"}),
+    GNOLL(40, 5, 9, new String[] {"Gnoll", "Gnoll"});
 
     private int health;
     private int strength;
     private int speed;
     private String[] name;
 
-    Stats(int health, int strength, int speed, String[] name) {
+    EnemyStats(int health, int strength, int speed, String[] name){
         this.health = health;
         this.strength = strength;
         this.speed = speed;
@@ -29,5 +30,5 @@ public enum Stats{
 
     public String getName(int gameLanguage){
         return name[gameLanguage];
-    }
+    }    
 }
