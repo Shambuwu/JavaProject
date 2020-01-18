@@ -1,15 +1,15 @@
 public enum EnemyStats{
-    GOBLIN(30, 4, 5, new String[] {"Goblin", "Aardmannetje"}),
-    KOBOLD(40, 6, 4, new String[] {"Kobold", "Kabouter"}),
-    OGRE(80, 7, 1, new String[] {"Ogre", "Oger"}),
-    GNOLL(40, 5, 9, new String[] {"Gnoll", "Gnoll"});
+    GOBLIN(30, 4, 5, Dialogue.enemy[Game.gameLanguage][0]),
+    KOBOLD(40, 6, 4, Dialogue.enemy[Game.gameLanguage][1]),
+    OGRE(80, 7, 1, Dialogue.enemy[Game.gameLanguage][2]),
+    GNOLL(40, 5, 9, Dialogue.enemy[Game.gameLanguage][3]);
 
     private int health;
     private int strength;
     private int speed;
-    private String[] name;
+    private String name;
 
-    EnemyStats(int health, int strength, int speed, String[] name){
+    EnemyStats(int health, int strength, int speed, String name){
         this.health = health;
         this.strength = strength;
         this.speed = speed;
@@ -29,6 +29,6 @@ public enum EnemyStats{
     }
 
     public String getName(int gameLanguage){
-        return name[gameLanguage];
+        return name;
     }    
 }

@@ -22,4 +22,24 @@ public class Dialogue{
         //0      1
         {"ja", "nee"}
     };
+
+    public static String[][] enemy = {
+        {"Goblin", "Kobold", "Gnoll", "Ogre"},
+        {"Aardmannetje", "Kabouter", "Gnoll", "Oger"}
+    };
+
+    public static String[][] item = {
+        {"Health Potion", "Stronger Potion of Healing", "Ultra Potion of Healing", "Strength Potion", "Stronger Potion of Strength", "Ultra Potion of Strength"},
+        {"Gezondheidsdrankje", "Sterker Gezondheidsdrankje", "Ultra Gezondheidsdrankje", "Krachtdrankje", "Sterker Krachtdrankje", "Ultra Krachtdrankje"}
+    };
+
+    public static String[][] player = {
+        {"Knight", "Assassin", "Mage"},
+        {"Ridder", "Sluipmoordenaar", "Magier"}
+    };
+
+    public static String[][] command = {
+        {"go", "quit", "help", "inventory", "use"}, //English
+        {"ga", "stop", "hulp", "inventaris", "gebruik"} //Dutch
+    };
 }

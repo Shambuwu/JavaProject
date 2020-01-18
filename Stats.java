@@ -1,14 +1,14 @@
 public enum Stats{
-    KNIGHT(70, 8, 4, new String[] {"Knight", "Ridder"}),
-    ASSASSIN(50, 9, 7, new String[] {"Assassin", "Sluipmoordenaar"}),
-    MAGE(40, 10, 4, new String[] {"Mage", "Magier"});
+    KNIGHT(70, 8, 4, Dialogue.player[Game.gameLanguage][0]),
+    ASSASSIN(50, 9, 7, Dialogue.player[Game.gameLanguage][1]),
+    MAGE(40, 10, 4, Dialogue.player[Game.gameLanguage][2]);
 
     private int health;
     private int strength;
     private int speed;
-    private String[] name;
+    private String name;
 
-    Stats(int health, int strength, int speed, String[] name) {
+    Stats(int health, int strength, int speed, String name) {
         this.health = health;
         this.strength = strength;
         this.speed = speed;
@@ -28,6 +28,6 @@ public enum Stats{
     }
 
     public String getName(int gameLanguage){
-        return name[gameLanguage];
+        return name;
     }
 }

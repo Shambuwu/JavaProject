@@ -22,7 +22,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    private int gameLanguage;
+    public static int gameLanguage;
     private Player player;
         
     /**

@@ -14,12 +14,6 @@ public class CommandWords
 {
     public static int gameLanguage;
 
-    // a constant array that holds all valid command words
-    private static String[][] commands = {
-        {"go", "quit", "help", "inventory", "use"}, //English
-        {"ga", "stop", "hulp", "inventaris", "gebruik"} //Dutch
-    };
-
     public static String[] validCommands;
 
     /**
@@ -39,12 +33,12 @@ public class CommandWords
             case "dutch":
                 System.out.println("Taal is vastgesteld!");
                 gameLanguage = Languages.DUTCH.getLanguage();
-                validCommands = commands[gameLanguage];   
+                validCommands = Dialogue.command[gameLanguage];   
                 break;
             case "english":
                 System.out.println("Language has been set!");
                 gameLanguage = Languages.ENGLISH.getLanguage();
-                validCommands = commands[gameLanguage];   
+                validCommands = Dialogue.command[gameLanguage];   
                 break;
             default:
                 System.out.println("Invalid language!");

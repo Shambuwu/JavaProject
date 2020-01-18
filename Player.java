@@ -51,6 +51,7 @@ public class Player{
             System.out.println(""+ i + ". " + name.getName(gameLanguage));
             i++;
         }
+        System.out.print("> ");
 
         int answer = scanner.nextInt();
         switch (answer){
