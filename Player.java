@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Player{
     private Stats playerStats;
     private String playerName;
+    private Inventory playerInventory = new Inventory();
     private int playerHealth;
     private int playerStrength;
     private int playerSpeed;
@@ -76,6 +77,10 @@ public class Player{
         return playerStats;
     }
 
+    public void setPlayerHeal(int heal){
+        playerHealth += heal;
+    }
+
     public int getPlayerHealth(){
         return playerHealth;
     }
@@ -90,5 +95,13 @@ public class Player{
 
     public int getPlayerStrength(){
         return playerStrength;
+    }
+
+    public void getPlayerInventory(){
+        playerInventory.getInventory();
+    }
+
+    public Inventory getInventory(){
+        return playerInventory;
     }
 }

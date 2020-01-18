@@ -131,6 +131,10 @@ public class Game
         }
         else if (commandWord.equals(commands[1])) {
             wantToQuit = quit(command);
+        } else if (commandWord.equals(commands[3])) {
+            player.getPlayerInventory();
+        } else if (commandWord.equals(commands[4])) {
+            useItem(command);
         }
 
         return wantToQuit;
@@ -149,13 +153,38 @@ public class Game
         System.out.println(Dialogue.response[gameLanguage][5]);
         System.out.println();
         System.out.println(Dialogue.response[gameLanguage][6]);
-        System.out.println(Dialogue.response[gameLanguage][7]);
+        for(int i = 0; i < CommandWords.validCommands.length; i++) {
+            System.out.println("   " + (i + 1) + ". " +CommandWords.validCommands[i]);
+        }
+        System.out.println();
+    }
+
+    /**
+     * Use item in inventory
+     */
+    private void useItem(Command command){
+        if(!command.hasSecondWord()){
+            System.out.println("Use what?");
+            return;
+        }
+
+        String use = command.getSecondWord();
+        try {
+            int item = Integer.parseInt(use);
+            player.setPlayerHeal(player.getInventory().useItem(item));
+            System.out.println("Your health is: " + player.getPlayerHealth());
+         }
+         catch (NumberFormatException e)
+         {
+            System.out.println("Try the number of the item you're trying to use.");
+         }
     }
 
     /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
      */
+    int steps = 1;
     private void goRoom(Command command) 
     {
         Random rand = new Random();
@@ -187,9 +216,13 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
-            //if(rand.nextInt(10) > 8){
-            Encounter fight = new Encounter(player);
-            //}
+            if(rand.nextInt(10) > 8){
+                Encounter fight = new Encounter(player);
+            } else if(steps == 5){
+                Encounter fight = new Encounter(player);
+                steps = 0;
+            }
+            steps++;
             System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
             System.out.print(Dialogue.response[gameLanguage][11]);
             if(currentRoom.northExit != null) {

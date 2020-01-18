@@ -16,8 +16,8 @@ public class CommandWords
 
     // a constant array that holds all valid command words
     private static String[][] commands = {
-        {"go", "quit", "help"}, //English
-        {"ga", "stop", "hulp"} //Dutch
+        {"go", "quit", "help", "inventory", "use"}, //English
+        {"ga", "stop", "hulp", "inventaris", "gebruik"} //Dutch
     };
 
     public static String[] validCommands;

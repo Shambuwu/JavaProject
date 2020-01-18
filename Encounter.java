@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Encounter{
     private Player player;
@@ -17,23 +18,23 @@ public class Encounter{
         if(randomEnemy < 40){
             enemyStats = EnemyStats.GOBLIN;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter a " + enemyStats.getName(0));
+            System.out.println("You encounter a " + enemyStats.getName(0) + "!");
         } else if(randomEnemy >= 40 && randomEnemy < 70){
             enemyStats = EnemyStats.KOBOLD;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter a " + enemyStats.getName(0));
+            System.out.println("You encounter a " + enemyStats.getName(0) + "!");
         } else if(randomEnemy >= 70 && randomEnemy < 90){
             enemyStats = EnemyStats.GNOLL;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter a " + enemyStats.getName(0));
+            System.out.println("You encounter a " + enemyStats.getName(0) + "!");
         } else if(randomEnemy >= 90){
             enemyStats = EnemyStats.OGRE;
             enemy = new Enemy(enemyStats);
-            System.out.println("You encounter an " + enemyStats.getName(0));
+            System.out.println("You encounter an " + enemyStats.getName(0) + "!");
         }
         scanner.nextLine();
         System.out.println("Your health is: " + player.getPlayerHealth());
-        System.out.println("Their health is: " + enemy.getEnemyHealth());
+        System.out.println("Their health is: " + enemy.getEnemyHealth() + "\n");
         if(encounterStart() == false){
             System.out.println("You die. Too bad.");
         }
@@ -66,14 +67,16 @@ public class Encounter{
 
     public void playerChoice(){
         System.out.println("What will you do?");
+        System.out.println("-----------------");
         System.out.println("1. Attack");
         System.out.println("2. Run");
         System.out.print("> ");
         int choice = scanner.nextInt();
         switch(choice){
             case 1:
-                enemy.setEnemyDamage(player.getPlayerStrength());
-                System.out.println("You hit the " + enemy.getType() + " for " + player.getPlayerStrength() + " damage!");
+                int damage = player.getPlayerStrength() + rand.nextInt(10);
+                enemy.setEnemyDamage(damage);
+                System.out.println("You hit the " + enemy.getType() + " for " + damage + " damage!");
                 System.out.println("Their health is: " + enemy.getEnemyHealth());
                 scanner.nextLine();
                 break;
@@ -88,8 +91,10 @@ public class Encounter{
     }
 
     private void enemyChoice(){
+        int damage = enemy.getStrength() + rand.nextInt(10);
         System.out.println("The " + enemy.getType() + " strikes!");
-        player.setPlayerDamage(enemy.getStrength());
+        System.out.println("They hit for " + damage + " damage!");
+        player.setPlayerDamage(damage);
         scanner.nextLine();
     }
 
