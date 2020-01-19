@@ -105,6 +105,10 @@ public class Player{
         playerInventory.getInventory();
     }
 
+    public void addInventoryItem(Item item){
+        playerInventory.addItem(item);
+    }
+
     public Inventory getInventory(){
         return playerInventory;
     }

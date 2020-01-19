@@ -35,4 +35,10 @@ public class Inventory{
         }
         return 0;
     }
+
+    public void addItem(Item item){
+        if(inventory.size() >= 5){
+            System.out.println("Your inventory is too full!");  
+        } else inventory.add(item);
+    }
 } 

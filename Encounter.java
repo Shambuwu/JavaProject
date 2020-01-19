@@ -62,18 +62,32 @@ public class Encounter{
             }
         }
 
+        if(rand.nextInt(100) > 49){
+            Item item = new Item(Potions.HEALTH_POT);
+            System.out.println(Dialogue.response[Game.gameLanguage][31] + item.getItemName() + "!");
+            player.addInventoryItem(item);
+        }
+
         System.out.println("You gain 20xp!");
         scanner.nextLine();
         return true;
     }
 
     public void playerChoice(){
+        int choice = 0;
         System.out.println(Dialogue.combat[Game.gameLanguage][1]);
         System.out.println("-----------------");
         System.out.println(Dialogue.combat[Game.gameLanguage][2]);
         System.out.println(Dialogue.combat[Game.gameLanguage][3]);
         System.out.print("> ");
-        int choice = scanner.nextInt();
+        try {
+            choice = scanner.nextInt();
+         }
+         catch (NumberFormatException e)
+         {
+            System.out.println(Dialogue.response[Game.gameLanguage][27]);
+            playerChoice();
+         }
         switch(choice){
             case 1:
                 int damage = player.getPlayerStrength() + rand.nextInt(10);
