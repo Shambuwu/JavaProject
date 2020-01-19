@@ -11,29 +11,13 @@ public class Encounter{
 
     Random rand = new Random();
 
-    public Encounter(Player player){
+    public Encounter(Player player, Enemy enemy){
         this.player = player;
         this.playerStats = player.getPlayerStats();
-        int randomEnemy = rand.nextInt(100);
-        if(randomEnemy < 40){
-            enemyStats = EnemyStats.GOBLIN;
-            enemy = new Enemy(enemyStats);
-            System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
-        } else if(randomEnemy >= 40 && randomEnemy < 70){
-            enemyStats = EnemyStats.KOBOLD;
-            enemy = new Enemy(enemyStats);
-            System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
-        } else if(randomEnemy >= 70 && randomEnemy < 90){
-            enemyStats = EnemyStats.GNOLL;
-            enemy = new Enemy(enemyStats);
-            System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
-        } else if(randomEnemy >= 90){
-            enemyStats = EnemyStats.OGRE;
-            enemy = new Enemy(enemyStats);
-            System.out.println(Dialogue.response[Game.gameLanguage][23] + enemyStats.getName(0) + "!");
-        }
+        this.enemy = enemy;
+        System.out.println(Dialogue.response[Game.gameLanguage][22] + enemy.getType() + "!");
         scanner.nextLine();
-        System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth());
+        System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerStats().getHealth());
         System.out.println(Dialogue.response[Game.gameLanguage][25] + enemy.getEnemyHealth() + "\n");
         encounterStart();
     }
@@ -51,7 +35,7 @@ public class Encounter{
             }
             if(hasWonFight == false){   
                 enemyChoice();
-                System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth());
+                System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerStats().getHealth());
                 if(player.getPlayerHealth() <= 0){
                     System.out.println(Dialogue.response[Game.gameLanguage][26]);
                     scanner.nextLine();

@@ -11,5 +11,5 @@ public class Item{
     
     public int getItemValue(){
         return potion.getPotionValue();
-    } //lol
+    }
 }

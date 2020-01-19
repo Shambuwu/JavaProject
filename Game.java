@@ -27,6 +27,7 @@ public class Game
     public static Difficulty gameDifficulty;
     private Player player;
     public HashMap<Room, Integer> map;
+    private Enemy enemy;
         
     /**
      * Create the game and initialise its internal map.
@@ -228,7 +229,7 @@ public class Game
         try {
             int item = Integer.parseInt(use);
             player.setPlayerHeal(player.getInventory().useItem(item));
-            System.out.println(Dialogue.response[Game.gameLanguage][24]+ player.getPlayerHealth());
+            System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerStats().getHealth());
          }
          catch (NumberFormatException e)
          {
@@ -272,10 +273,24 @@ public class Game
         }
         else {
             currentRoom = nextRoom;
+            int randomEnemy = rand.nextInt(100);
+            if(randomEnemy < 40){
+                enemy = new Enemy(EnemyStats.GOBLIN);
+                //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
+            } else if(randomEnemy >= 40 && randomEnemy < 70){
+                enemy = new Enemy(EnemyStats.KOBOLD);
+                //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
+            } else if(randomEnemy >= 70 && randomEnemy < 90){
+                enemy = new Enemy(EnemyStats.GNOLL);
+                //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
+            } else if(randomEnemy >= 90){
+                enemy = new Enemy(EnemyStats.OGRE);
+                //System.out.println(Dialogue.response[Game.gameLanguage][23] + enemyStats.getName(0) + "!");
+            }
             if(rand.nextInt(10) > 7){
-                Encounter fight = new Encounter(player);
+                Encounter fight = new Encounter(player, enemy);
             } else if(steps == 5){
-                Encounter fight = new Encounter(player);
+                BossFight fight = new BossFight(player, EnemyStats.DEMON);
                 steps = 0;
             }
             steps++;

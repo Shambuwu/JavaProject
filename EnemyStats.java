@@ -2,7 +2,10 @@ public enum EnemyStats{
     GOBLIN(15, 2, 5, Dialogue.enemy[Game.gameLanguage][0]),
     KOBOLD(20, 3, 4, Dialogue.enemy[Game.gameLanguage][1]),
     OGRE(50, 13, 1, Dialogue.enemy[Game.gameLanguage][2]),
-    GNOLL(40, 7, 9, Dialogue.enemy[Game.gameLanguage][3]);
+    GNOLL(40, 7, 9, Dialogue.enemy[Game.gameLanguage][3]),
+    WARRIOR(100, 15, 8, Dialogue.boss[Game.gameLanguage][0]),
+    KING(130, 9, 4, Dialogue.boss[Game.gameLanguage][1]),
+    DEMON(50, 30, 10, Dialogue.boss[Game.gameLanguage][2]);
 
     private int health;
     private int strength;

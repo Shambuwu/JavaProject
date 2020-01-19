@@ -38,7 +38,7 @@ public class Inventory{
 
     public void addItem(Item item){
         if(inventory.size() >= 5){
-            System.out.println("Your inventory is too full!");  
+            System.out.println(Dialogue.response[Game.gameLanguage][32]);  
         } else inventory.add(item);
     }
 } 
