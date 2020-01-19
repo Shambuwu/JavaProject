@@ -44,8 +44,8 @@ public class Dialogue{
     };
 
     public static String[][] command = {
-        {"go", "quit", "help", "inventory", "use", "look"}, //English
-        {"ga", "stop", "hulp", "inventaris", "gebruik", "kijk"} //Dutch
+        {"go" , "back", "help", "inventory", "use", "look","quit"}, //English
+        {"ga", "terug", "hulp", "inventaris", "gebruik", "kijk","stop"} //Dutch
     };
 
     public static String[][] combat = {
@@ -72,4 +72,5 @@ public class Dialogue{
          {"Je staat op de hoge muur van dit koninkrijk.", "Je ziet een lege nederzetting in de verte.", "Klimop heeft een groot deel van de muur overgenomen."},
          {"Je ziet het skelet van een mens hangend aan een wandkettingen set.", "Je kan bijna niet door de duisternis heen zien.", "'Ik vraag me af hoeveel mensen hier gevangen zijn geweest.'"}}
     };
+
 }

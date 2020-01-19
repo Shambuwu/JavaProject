@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=BossFight
+comment1.params=player\ enemyStats
+comment1.target=BossFight(Player,\ EnemyStats)
+numComments=2

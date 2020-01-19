@@ -23,6 +23,7 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
+    private Room lastRoom;
     public static int gameLanguage;
     public static Difficulty gameDifficulty;
     private Player player;
@@ -140,18 +141,21 @@ public class Game
             printHelp();
         }
         else if (commandWord.equals(commands[0])) {
+            lastRoom = currentRoom;
             goRoom(command);
         }
         else if (commandWord.equals(commands[1])) {
-            wantToQuit = quit(command);
+            currentRoom = lastRoom;
+            
         } else if (commandWord.equals(commands[3])) {
             player.getPlayerInventory();
         } else if (commandWord.equals(commands[4])) {
             useItem(command);
         } else if (commandWord.equals(commands[5])){
             lookAround();
+        } else if (commandWord.equals(commands[6])){
+            wantToQuit = quit(command);
         }
-
         return wantToQuit;
     }
 

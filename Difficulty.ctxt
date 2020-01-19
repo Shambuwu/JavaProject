@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Difficulty
+comment1.params=difficulty\ name
+comment1.target=Difficulty(double,\ java.lang.String)
+comment2.params=
+comment2.target=double\ getDifficulty()
+comment3.params=
+comment3.target=java.lang.String\ getDifficultyName()
+numComments=4
