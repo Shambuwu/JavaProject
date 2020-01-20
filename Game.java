@@ -23,7 +23,8 @@ public class Game
 {
     private Parser parser;
     private Room currentRoom;
-    private Room lastRoom;
+    private Room lastRoom = currentRoom;
+    private Room tempRoom;
     public static int gameLanguage;
     public static Difficulty gameDifficulty;
     private Player player;
@@ -103,21 +104,7 @@ public class Game
         System.out.println(Dialogue.response[gameLanguage][1]);
         System.out.println(Dialogue.response[gameLanguage][2]);
         System.out.println();
-        System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
-        System.out.print(Dialogue.response[gameLanguage][11]);
-        if(currentRoom.northExit != null) {
-            System.out.print(Dialogue.direction[gameLanguage][0] + " ");
-        }
-        if(currentRoom.eastExit != null) {
-            System.out.print(Dialogue.direction[gameLanguage][1] + " ");
-        }
-        if(currentRoom.southExit != null) {
-            System.out.print(Dialogue.direction[gameLanguage][2] + " ");
-        }
-        if(currentRoom.westExit != null) {
-            System.out.print(Dialogue.direction[gameLanguage][3] + " ");
-        }
-        System.out.println();
+        checkRoom();
     }
 
     /**
@@ -128,7 +115,7 @@ public class Game
     private boolean processCommand(Command command) 
     {
         String[] commands = CommandWords.validCommands;
-
+        
         boolean wantToQuit = false;
 
         if(command.isUnknown()) {
@@ -145,8 +132,10 @@ public class Game
             goRoom(command);
         }
         else if (commandWord.equals(commands[1])) {
+            tempRoom    = currentRoom;
             currentRoom = lastRoom;
-            
+            lastRoom    = tempRoom;
+            checkRoom();
         } else if (commandWord.equals(commands[3])) {
             player.getPlayerInventory();
         } else if (commandWord.equals(commands[4])) {
@@ -155,8 +144,17 @@ public class Game
             lookAround();
         } else if (commandWord.equals(commands[6])){
             wantToQuit = quit(command);
-        }
+        }   else if (commandWord.equals(commands[7])){
+            check(command);
+            
+        } //else if(command.this.secondWord.equals(room)){
+        
+       
+        
+       
+            
         return wantToQuit;
+       
     }
 
     // implementations of user commands:
@@ -331,4 +329,47 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
+    /**
+     * "check" was entered. checks if there is a 2nd word.
+     * if there is a 2nd word, brings it to the correct check.
+     */
+    private void check(Command command) {
+        String[] commands = CommandWords.validCommands;
+        String commandWord = command.getSecondWord();
+        
+        if(!command.hasSecondWord()) {
+            // if there is no second word, we don't know what to check...
+            System.out.println(Dialogue.response[gameLanguage][33]);
+            return;
+        }
+        if(commandWord.equals(Dialogue.secondWord[gameLanguage][0]))    {
+         checkRoom();
+        }
+        else { System.out.print(Dialogue.response[gameLanguage][3]); 
+        }
+    }
+    /**
+     * if check finds room as 2nd word, checks the room and displays the exits.
+     */
+    private void checkRoom(){  
+     System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
+            System.out.print(Dialogue.response[gameLanguage][11]);
+            if(currentRoom.northExit != null) {
+            System.out.print(Dialogue.direction[gameLanguage][0] + " ");
+        }
+        if(currentRoom.eastExit != null) {
+            System.out.print(Dialogue.direction[gameLanguage][1] + " ");
+        }
+        if(currentRoom.southExit != null) {
+            System.out.print(Dialogue.direction[gameLanguage][2] + " ");
+        }
+        if(currentRoom.westExit != null) {
+            System.out.print(Dialogue.direction[gameLanguage][3] + " ");
+        }
+        System.out.println();
+    
+    
+    }
+    
 }
+
