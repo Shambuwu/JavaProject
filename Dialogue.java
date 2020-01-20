@@ -44,8 +44,8 @@ public class Dialogue{
     };
 
     public static String[][] command = {
-        {"go" , "back", "help", "inventory", "use", "look","quit"}, //English
-        {"ga", "terug", "hulp", "inventaris", "gebruik", "kijk","stop"} //Dutch
+        {"go" , "back", "help", "inventory", "use", "look", "quit"}, //English
+        {"ga", "terug", "hulp", "inventaris", "gebruik", "kijk", "stop"} //Dutch
     };
 
     public static String[][] combat = {

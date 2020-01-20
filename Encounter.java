@@ -58,29 +58,21 @@ public class Encounter{
     }
 
     public void playerChoice(){
-        int choice = 0;
         System.out.println(Dialogue.combat[Game.gameLanguage][1]);
         System.out.println("-----------------");
         System.out.println(Dialogue.combat[Game.gameLanguage][2]);
         System.out.println(Dialogue.combat[Game.gameLanguage][3]);
         System.out.print("> ");
-        try {
-            choice = scanner.nextInt();
-         }
-         catch (NumberFormatException e)
-         {
-            System.out.println(Dialogue.response[Game.gameLanguage][27]);
-            playerChoice();
-         }
+        String choice = scanner.nextLine();
         switch(choice){
-            case 1:
+            case "1":
                 int damage = player.getPlayerStrength() + rand.nextInt(10);
                 enemy.setEnemyDamage(damage);
                 System.out.println(Dialogue.combat[Game.gameLanguage][4] + enemy.getType() + Dialogue.combat[Game.gameLanguage][5] + damage + Dialogue.combat[Game.gameLanguage][6]);
                 System.out.println(Dialogue.response[Game.gameLanguage][25] + enemy.getEnemyHealth());
                 scanner.nextLine();
                 break;
-            case 2:
+            case "2":
                 if(run() == true) hasWonFight = true;
                 scanner.nextLine();
                 break;

@@ -146,7 +146,6 @@ public class Game
         }
         else if (commandWord.equals(commands[1])) {
             currentRoom = lastRoom;
-            
         } else if (commandWord.equals(commands[3])) {
             player.getPlayerInventory();
         } else if (commandWord.equals(commands[4])) {
