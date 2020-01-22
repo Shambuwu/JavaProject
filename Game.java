@@ -79,6 +79,7 @@ public class Game
      */
     public void play() 
     {
+        
         player = new Player();
         setDifficulty();
         printWelcome();
@@ -131,11 +132,14 @@ public class Game
             lastRoom = currentRoom;
             goRoom(command);
         }
-        else if (commandWord.equals(commands[1])) {
-            tempRoom    = currentRoom;
-            currentRoom = lastRoom;
-            lastRoom    = tempRoom;
-            checkRoom();
+        else if (commandWord.equals(commands[1])){
+            if (lastRoom != null){
+            
+               tempRoom    = currentRoom;
+               currentRoom = lastRoom;
+               lastRoom    = tempRoom;
+               checkRoom();
+            }    
         } else if (commandWord.equals(commands[3])) {
             player.getPlayerInventory();
         } else if (commandWord.equals(commands[4])) {
@@ -345,13 +349,15 @@ public class Game
         if(commandWord.equals(Dialogue.secondWord[gameLanguage][0]))    {
          checkRoom();
         }
-        else { System.out.print(Dialogue.response[gameLanguage][3]); 
+        else { System.out.println(Dialogue.response[gameLanguage][3]); 
         }
     }
     /**
      * if check finds room as 2nd word, checks the room and displays the exits.
      */
     private void checkRoom(){  
+       
+       
      System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
             System.out.print(Dialogue.response[gameLanguage][11]);
             if(currentRoom.northExit != null) {
