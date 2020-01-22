@@ -198,24 +198,24 @@ public class Game
         System.out.print("> ");
 
         int input = scanner.nextInt();
+        String outputx = Dialogue.response[Game.gameLanguage][30];
         switch(input){
             case 1:
                 gameDifficulty = Difficulty.EASY;
-                System.out.println(Dialogue.response[Game.gameLanguage][30]);
                 break;
             case 2:
                 gameDifficulty = Difficulty.MEDIUM;
-                System.out.println(Dialogue.response[Game.gameLanguage][30]);
                 break;
             case 3:
                 gameDifficulty = Difficulty.HARD;
-                System.out.println(Dialogue.response[Game.gameLanguage][30]);
                 break;
             default:
-                System.out.println(Dialogue.response[Game.gameLanguage][18]);
+                outputx = Dialogue.response[Game.gameLanguage][18]; 
                 setDifficulty();
                 break;
         }
+        System.out.println(outputx);
+        
     }
 
     /**

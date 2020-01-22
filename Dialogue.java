@@ -62,7 +62,8 @@ public static String[][] secondWord = {
         {"Makkelijk", "Normaal", "Moeilijk"}
     };
 
-    public static String[][][] view = {
+    public static String[][][] view = 
+    {
         {{"There is a dead body by the entrance.", "A big open door invites you to travel beyond.", "You hear a cry echo in the distance."},
          {"There is an empty throne in front of you. 'I wonder who once sat there.'", "There's a piercing smell present.", "It doesn't seem like there's anyone around."},
          {"Dead flora is all over this garden.", "You spot a dog's corpse. 'Yuck!'", "You wonder if this garden has ever flourished."},
