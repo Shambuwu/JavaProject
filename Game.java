@@ -164,10 +164,11 @@ public class Game
         if (commandWord.equals(commands[2])) {
             printHelp();
         }
+        
         else if (commandWord.equals(commands[0])) {
             lastRoom = currentRoom;
             goRoom(command);
-            if (!checkBossRoom()){
+            if (!checkBossRoom() && !checkcombatRoom()){
                 spawnEnemy();
                 
             }
@@ -450,6 +451,39 @@ public class Game
           return true;
       }
       return false;
+    }
+    private boolean checkcombatRoom(){
+     if (map.get(currentRoom) == 3){   
+         enemy = new Enemy(EnemyStats.KOBOLD);
+         Encounter fight = new Encounter(player, enemy);
+         
+         return true;
+     }  else if (map.get(currentRoom) == 5){
+         enemy = new Enemy(EnemyStats.GOBLIN);
+         Encounter fight = new Encounter(player, enemy);
+         
+         return true;
+         
+     }  else if (map.get(currentRoom) == 10){
+         enemy = new Enemy(EnemyStats.GNOLL);
+         Encounter fight = new Encounter(player, enemy);
+         
+         return true;
+     }  else if (map.get(currentRoom) == 8){
+         enemy = new Enemy(EnemyStats.GNOLL);
+         Encounter fight = new Encounter(player, enemy);
+         
+         return true;
+     }  else if (map.get(currentRoom) == 12){
+         enemy = new Enemy(EnemyStats.OGRE);
+         Encounter fight = new Encounter(player, enemy);
+         
+         return true;
+     }  
+     
+     
+     return false;
+
     }
 }
 
