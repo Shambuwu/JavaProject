@@ -5,6 +5,7 @@ import java.util.ArrayList;
  */
 public class Inventory{
     ArrayList<Item> inventory = new ArrayList<>();
+    ArrayList<KeyItem> keyItemInventory = new ArrayList<>();
 
     public Inventory(){
         Item item = new Item(Potions.HEALTH_POT);
@@ -23,7 +24,15 @@ public class Inventory{
                 System.out.println("" + y + ". " + i.getItemName());
                 y++;
             }
-        } else System.out.println(Dialogue.response[Game.gameLanguage][20]);
+        } else if(keyItemInventory.size() != 0){
+            int z = 1;
+            System.out.println("Key items:");
+            for(KeyItem i : keyItemInventory){
+                System.out.println("" + z + ". " + i.getKeyItemName());
+                z++;
+            }
+        } 
+        else System.out.println(Dialogue.response[Game.gameLanguage][20]);
 
     }
 /**
@@ -47,5 +56,18 @@ public class Inventory{
         if(inventory.size() >= 5){
             System.out.println(Dialogue.response[Game.gameLanguage][32]);  
         } else inventory.add(item);
+    }
+    
+    public void addKeyItem(KeyItem item){
+        keyItemInventory.add(item);
+    }
+
+    public void useKeyItem(int item){
+        for(int i = 0; i < keyItemInventory.size(); i++){
+            if(i == (item - 1)){
+                System.out.println("Used " + keyItemInventory.get(i).getKeyItemName());
+                keyItemInventory.remove(item);
+            }
+        }
     }
 } 

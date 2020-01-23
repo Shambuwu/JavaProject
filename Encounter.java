@@ -54,7 +54,8 @@ public class Encounter{
             player.addInventoryItem(item);
         }
 
-        System.out.println("You gain 20xp!");
+        System.out.println("You gain " + enemy.getXPValue() + "xp!");
+        player.setPlayerXP(enemy.getXPValue());
         scanner.nextLine();
         return true;
     }

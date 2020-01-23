@@ -8,6 +8,8 @@ public class Player{
     private int playerStrength;
     private int playerSpeed;
     private int gameLanguage = CommandWords.gameLanguage;
+    private int playerXP;
+    private int playerLevel;
     Scanner scanner = new Scanner(System.in);
 
     public Player(){
@@ -24,6 +26,8 @@ public class Player{
         if(checkPlayerName(tempName) == false) createPlayer();
         playerName = tempName;
         setPlayerStats();
+        playerXP = 0;
+        playerLevel = 1;
     }
 
     private boolean checkPlayerName(String tempName){
@@ -118,5 +122,36 @@ public class Player{
 
     public Inventory getInventory(){
         return playerInventory;
+    }
+
+    public void playerLevelUp(){
+        playerLevel += 1;
+        playerStrength += (int) (playerLevel * 0.5);
+        System.out.println("You leveled up!");
+        playerHealth = playerStats.getHealth();
+    }
+
+    public int getPlayerLevel(){
+        return playerLevel;
+    }
+
+    public int getPlayerXP(){
+        return playerXP;
+    }
+    
+    public void setPlayerXP(int xp){
+        playerXP += xp;
+        while(!checkPlayerLevel()) checkPlayerLevel();
+    }
+
+    private Boolean checkPlayerLevel(){
+        if(playerXP > 100){
+            playerLevelUp();
+            playerXP = playerXP - 100;
+            if(playerXP > 100){
+                return false;
+            }
+        }
+        return true;
     }
 }

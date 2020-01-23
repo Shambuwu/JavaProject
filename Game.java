@@ -337,29 +337,30 @@ public class Game
     public void spawnEnemy(){
         Random rand = new Random();
         int randomEnemy = rand.nextInt(100);
-            if(randomEnemy < 40){
-                enemy = new Enemy(EnemyStats.GOBLIN);
-                //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
-            } else if(randomEnemy >= 40 && randomEnemy < 70){
-                enemy = new Enemy(EnemyStats.KOBOLD);
-                //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
-            } else if(randomEnemy >= 70 && randomEnemy < 90){
-                enemy = new Enemy(EnemyStats.GNOLL);
-                //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
-            } else if(randomEnemy >= 90){
-                enemy = new Enemy(EnemyStats.OGRE);
-                //System.out.println(Dialogue.response[Game.gameLanguage][23] + enemyStats.getName(0) + "!");
-            }
-            if(rand.nextInt(10) > 7){
-                Encounter fight = new Encounter(player, enemy);
-                
-             
-            } else if(steps == 5000){
-                BossFight fight = new BossFight(player, EnemyStats.DEMON);
-                steps = 0;
-            }
-            steps++;
+        if(randomEnemy < 40){
+            enemy = new Enemy(EnemyStats.GOBLIN);
+            //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
+        } else if(randomEnemy >= 40 && randomEnemy < 70){
+            enemy = new Enemy(EnemyStats.KOBOLD);
+            //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
+        } else if(randomEnemy >= 70 && randomEnemy < 90){
+            enemy = new Enemy(EnemyStats.GNOLL);
+            //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
+        } else if(randomEnemy >= 90){
+            enemy = new Enemy(EnemyStats.OGRE);
+            //System.out.println(Dialogue.response[Game.gameLanguage][23] + enemyStats.getName(0) + "!");
+        }
+        if(rand.nextInt(10) > 7){
+            Encounter fight = new Encounter(player, enemy);
+            
+         
+        } else if(steps == 4){
+            Encounter fight = new Encounter(player, enemy);
+            steps = 0;
+        }
+        steps++;
     }
+       
     private void disease(){
         Random rand = new Random();
         int randomEnemy = rand.nextInt(100);
@@ -427,6 +428,11 @@ public class Game
         }
         System.out.println();
     }
-    
+
+    private void geyKeyItem(){
+        KeyItem key = new KeyItem(KeyItems.KEY);
+        player.getInventory().addKeyItem(key);
+        System.out.println("You obtained " + key.getKeyItemName());
+    }
 }
 
