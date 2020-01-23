@@ -19,7 +19,7 @@ public class Encounter{
         this.enemy = enemy;
         System.out.println(Dialogue.response[Game.gameLanguage][22] + enemy.getType() + "!");
         scanner.nextLine();
-        System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerStats().getHealth());
+        System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerMaxHealth());
         System.out.println(Dialogue.response[Game.gameLanguage][25] + enemy.getEnemyHealth() + "\n");
         encounterStart();
     }
@@ -31,13 +31,15 @@ public class Encounter{
                 playerChoice();
                 if(enemy.getEnemyHealth() <= 0){
                     System.out.println(Dialogue.combat[Game.gameLanguage][0] + enemy.getType());
+                    System.out.println("You gain " + enemy.getXPValue() + "xp!");
+                    player.setPlayerXP(enemy.getXPValue());
                     hasWonFight = true;
                 }
                 scanner.nextLine();
             }
             if(hasWonFight == false){   
                 enemyChoice();
-                System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerStats().getHealth());
+                System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerMaxHealth());
                 if(player.getPlayerHealth() <= 0){
                     System.out.println(Dialogue.response[Game.gameLanguage][26]);
                     scanner.nextLine();
@@ -53,9 +55,6 @@ public class Encounter{
             System.out.println(Dialogue.response[Game.gameLanguage][31] + item.getItemName() + "!");
             player.addInventoryItem(item);
         }
-
-        System.out.println("You gain " + enemy.getXPValue() + "xp!");
-        player.setPlayerXP(enemy.getXPValue());
         scanner.nextLine();
         return true;
     }
@@ -85,6 +84,8 @@ public class Encounter{
                 break;
             case 2:
                 if(run() == true) hasWonFight = true;
+                System.out.println("You gain " + 5 + "xp!");
+                player.setPlayerXP(5);
                 scanner.nextLine();
                 break;
             default:

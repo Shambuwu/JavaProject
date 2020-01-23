@@ -16,10 +16,12 @@ public class Dialogue{
         //0        1       2        3
         {"noord", "oost", "zuid", "west"}
     };
-public static String[][] secondWord = {
-{"room", "stats"},
-{"kamer", "statistieken"},
-};
+
+    public static String[][] secondWord = {
+        {"room", "stats"},
+        {"kamer", "statistieken"},
+    };
+    
     public static String[][] description = {
         {"at the Main Plaza", "inside the Castle Hall", "in the Graveyard", "on the Holy Bridge", "in the Empty Treasure Room", " in the Meadow", " on the Abandoned Road", " in the Abandoned Settlement", "on the Eastern Road", "at the Abandoned House", "at the Castle Entrance", "on the Eastern Corridor", " in the Mysterious Room", "in the Treasure Room", "in the Northern Corridor", " in the Throneroom"  },
         //0                    1                         2                   3                     4                              5                 6                         7                              8                      9                         10                        11                          12                        13                      14                           15                 

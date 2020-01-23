@@ -138,6 +138,10 @@ public class Player{
         return playerLevel;
     }
 
+    public int getPlayerMaxHealth(){
+        return playerMaxHealth;
+    }
+
     public int getPlayerXP(){
         return playerXP;
     }

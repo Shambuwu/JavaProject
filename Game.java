@@ -280,7 +280,7 @@ public class Game
         try {
             int item = Integer.parseInt(use);
             player.setPlayerHeal(player.getInventory().useItem(item));
-            System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerStats().getHealth());
+            System.out.println(Dialogue.response[Game.gameLanguage][24] + player.getPlayerHealth() + "/" + player.getPlayerMaxHealth());
          }
          catch (NumberFormatException e)
          {
@@ -438,7 +438,7 @@ public class Game
         System.out.println("You obtained " + key.getKeyItemName());
     }
     
-    private boolean checkBossRoom(){ 
+    private Boolean checkBossRoom(){ 
       if (map.get(currentRoom) == 7){
           BossFight fight = new BossFight(player, EnemyStats.DEMON);
           return true;
