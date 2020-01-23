@@ -167,7 +167,10 @@ public class Game
         else if (commandWord.equals(commands[0])) {
             lastRoom = currentRoom;
             goRoom(command);
-            spawnEnemy();
+            if (!checkBossRoom()){
+                spawnEnemy();
+                
+            }
             disease();
             checkRoom();
         }
@@ -433,6 +436,20 @@ public class Game
         KeyItem key = new KeyItem(KeyItems.KEY);
         player.getInventory().addKeyItem(key);
         System.out.println("You obtained " + key.getKeyItemName());
+    }
+    
+    private boolean checkBossRoom(){ 
+      if (map.get(currentRoom) == 7){
+          BossFight fight = new BossFight(player, EnemyStats.DEMON);
+          return true;
+      } else if (map.get(currentRoom) == 15){
+          BossFight fight = new BossFight(player, EnemyStats.KING);
+          return true;
+      } else if (map.get(currentRoom) == 9){
+          BossFight fight = new BossFight(player, EnemyStats.WARRIOR);
+          return true;
+      }
+      return false;
     }
 }
 

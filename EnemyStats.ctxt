@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=EnemyStats
 comment0.text=\r\n\ The\ stats\ for\ all\ enemies\ are\ written\ here.\r\n\ Every\ enemy\ has\ 3\ stats.\ from\ left\ to\ right\ they\ are\:\r\n\ Health,\ Strength,\ speed\r\n
-comment1.params=health\ strength\ speed\ name
-comment1.target=EnemyStats(int,\ int,\ int,\ java.lang.String)
+comment1.params=health\ strength\ speed\ name\ xp
+comment1.target=EnemyStats(int,\ int,\ int,\ java.lang.String,\ int)
 comment2.params=
 comment2.target=int\ getHealth()
 comment3.params=
@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=int\ getSpeed()
 comment5.params=gameLanguage
 comment5.target=java.lang.String\ getName(int)
-numComments=6
+comment6.params=
+comment6.target=int\ getXPValue()
+numComments=7
