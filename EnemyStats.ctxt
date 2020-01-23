@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=EnemyStats
+comment0.text=\r\n\ The\ stats\ for\ all\ enemies\ are\ written\ here.\r\n\ Every\ enemy\ has\ 3\ stats.\ from\ left\ to\ right\ they\ are\:\r\n\ Health,\ Strength,\ speed\r\n
 comment1.params=health\ strength\ speed\ name
 comment1.target=EnemyStats(int,\ int,\ int,\ java.lang.String)
 comment2.params=

@@ -1,3 +1,9 @@
+/**
+ * The stats for all enemies are written here.
+ * Every enemy has 3 stats. from left to right they are:
+ * Health, Strength, speed
+ */
+
 public enum EnemyStats{
     GOBLIN(15, 2, 5, Dialogue.enemy[Game.gameLanguage][0]),
     KOBOLD(20, 3, 4, Dialogue.enemy[Game.gameLanguage][1]),

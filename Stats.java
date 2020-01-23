@@ -1,3 +1,9 @@
+/**
+ * This class creates all ingame classess.
+ * The stats from left to right are:
+ * Health, Strength, Speed.
+ */
+
 public enum Stats{
     KNIGHT(70, 6, 4, Dialogue.player[Game.gameLanguage][0]),
     ASSASSIN(40, 9, 7, Dialogue.player[Game.gameLanguage][1]),

@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=BossFight
+comment0.text=\ \r\n\ This\ class\ creates\ the\ Boss\ which\ is\ encoutered.\r\n
 comment1.params=player\ enemyStats
 comment1.target=BossFight(Player,\ EnemyStats)
 numComments=2

@@ -296,7 +296,9 @@ public class Game
             currentRoom = nextRoom;
         }
     }
-
+    /**
+     * Starts a random encounter against an enemy.
+     */
     public void spawnEnemy(){
         Random rand = new Random();
         int randomEnemy = rand.nextInt(100);
@@ -357,7 +359,7 @@ public class Game
         }
     }
     /**
-     * if check finds room as 2nd word, checks the room and displays the exits.
+     * if check finds room as second word, checks the room and displays the exits.
      */
     private void checkRoom(){     
         System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());

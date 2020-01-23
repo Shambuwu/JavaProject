@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Languages
+comment0.text=\r\n\ Creates\ Languages.\ \r\n
 comment1.params=language
 comment1.target=Languages(int)
 comment2.params=

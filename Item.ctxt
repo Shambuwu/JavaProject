@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Item
+comment0.text=\ \r\n\ Creates\ items\ which\ are\ further\ worked\ on\ in\ Game\r\n
 comment1.params=potion
 comment1.target=Item(Potions)
 comment2.params=

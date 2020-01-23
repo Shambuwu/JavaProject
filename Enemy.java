@@ -1,3 +1,8 @@
+/** 
+ * Whenever an "encounter" starts, the game will choose a random enemy that battles you.
+ * The enemy that is chosen will be created here.
+ */
+
 public class Enemy{
     private String enemyType;
     private int health;

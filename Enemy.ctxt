@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Enemy
+comment0.text=\ \r\n\ Whenever\ an\ "encounter"\ starts,\ the\ game\ will\ choose\ a\ random\ enemy\ that\ battles\ you.\r\n\ The\ enemy\ that\ is\ chosen\ will\ be\ created\ here.\r\n
 comment1.params=enemyStats
 comment1.target=Enemy(EnemyStats)
 comment2.params=

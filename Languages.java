@@ -1,3 +1,7 @@
+/**
+ * Creates Languages. 
+ */
+
 public enum Languages{
     ENGLISH(0),
     DUTCH(1);

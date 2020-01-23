@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Difficulty
+comment0.text=\r\n\ This\ setting\ changes\ the\ health\ and\ strength\ to\ the\ desired\ difficulty.\r\n\ In\ enemystats\ the\ stats\ for\ every\ enemy\ is\ written.\ \r\n\ If\ played\ on\ easy\ the\ health\ will\ be\ multiplied\ by\ 0.8.\r\n
 comment1.params=difficulty\ name
 comment1.target=Difficulty(double,\ java.lang.String)
 comment2.params=

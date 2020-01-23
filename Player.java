@@ -13,7 +13,9 @@ public class Player{
     public Player(){
         createPlayer();
     }
-
+ /** 
+  * The "choose your name" part.
+  */
     public void createPlayer(){
         System.out.println(Dialogue.response[gameLanguage][13]);
         System.out.print("> ");
@@ -44,7 +46,9 @@ public class Player{
 
         return true;
     }
-
+/** 
+ * Choose your class part.
+ */
     public void setPlayerStats(){
         System.out.println(Dialogue.response[gameLanguage][17] + playerName + "?");
         int i = 1;
@@ -78,7 +82,10 @@ public class Player{
     public Stats getPlayerStats(){
         return playerStats;
     }
-
+/** 
+ * checks if the players health is not above the max health for the class.
+ * if it is it will cap it at the maximum health the class has.
+ */
     public void setPlayerHeal(int heal){
         if((playerHealth += heal) > playerStats.getHealth()){
             playerHealth = playerStats.getHealth();

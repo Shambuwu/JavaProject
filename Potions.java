@@ -1,4 +1,6 @@
-
+/**
+ * creates all potions
+ */
 
 
 public enum Potions{

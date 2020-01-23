@@ -1,3 +1,9 @@
+/**
+ * This whole class is used in connection to the Player. 
+ * If the player needs to know something, text will be displayed.
+ * in command there are all commands that are in the "help" command.
+ */
+
 public class Dialogue{
     public static String[][] response = {
         {"Welcome to the World of Zuul!", "World of Zuul is a new, incredibly boring adventure game.", "Type 'help' if you need help.", "I don't know what you mean...", "You are lost. You are alone. You wander", "around at the university.", "Your command words are:", "   go quit help", "Go where?", "There is no door!", "You are ", "Exits: ", "Thank you for playing. Good bye!", "What is your name Hero?", "So your name is ", "That's a good name!", "Pardon?", "What is your profession ", "That's not a valid answer...", "Your inventory contains: ", "Your inventory is empty!", "You used the ", "You encounter a ", "You encounter an ", "Your health is: ", "Their health is: ", "You die. Too bad.", "Use what?", "Try the number of the item you're trying to use.", "On what difficulty would you like to play?", "Difficulty has been set!", "You obtained a ", "Your inventory is too full!", "Check what?"  },

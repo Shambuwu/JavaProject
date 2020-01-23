@@ -23,7 +23,9 @@ public class CommandWords
     {
         setLanguage();
     }
-
+/** 
+ * Chooses the language chosen by the player and changes the whole game to the desired language.
+ */
     public void setLanguage(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select a language");

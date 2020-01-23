@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Stats
+comment0.text=\r\n\ This\ class\ creates\ all\ ingame\ classess.\r\n\ The\ stats\ from\ left\ to\ right\ are\:\r\n\ Health,\ Strength,\ Speed.\r\n
 comment1.params=health\ strength\ speed\ name
 comment1.target=Stats(int,\ int,\ int,\ java.lang.String)
 comment2.params=

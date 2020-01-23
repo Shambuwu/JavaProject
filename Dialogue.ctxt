@@ -1,3 +1,4 @@
 #BlueJ class context
 comment0.target=Dialogue
+comment0.text=\r\n\ This\ whole\ class\ is\ used\ in\ connection\ to\ the\ Player.\ \r\n\ If\ the\ player\ needs\ to\ know\ something,\ text\ will\ be\ displayed.\r\n\ in\ command\ there\ are\ all\ commands\ that\ are\ in\ the\ "help"\ command.\r\n
 numComments=1

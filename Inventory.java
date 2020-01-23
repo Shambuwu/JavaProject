@@ -1,5 +1,8 @@
 import java.util.ArrayList;
-
+/**
+ * Shows all items in the inventory.
+ * 
+ */
 public class Inventory{
     ArrayList<Item> inventory = new ArrayList<>();
 
@@ -23,7 +26,9 @@ public class Inventory{
         } else System.out.println(Dialogue.response[Game.gameLanguage][20]);
 
     }
-
+/**
+ * whenever an item is used, its used here.
+ */
     public int useItem(int item){
         for(int i = 0; i < inventory.size(); i++){
             if(i == (item - 1)){
@@ -35,7 +40,9 @@ public class Inventory{
         }
         return 0;
     }
-
+/** 
+ * whenever an item is taken, this command runs.
+ */
     public void addItem(Item item){
         if(inventory.size() >= 5){
             System.out.println(Dialogue.response[Game.gameLanguage][32]);  

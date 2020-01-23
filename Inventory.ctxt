@@ -1,11 +1,14 @@
 #BlueJ class context
 comment0.target=Inventory
+comment0.text=\r\n\ Shows\ all\ items\ in\ the\ inventory.\r\n\ \r\n
 comment1.params=
 comment1.target=Inventory()
 comment2.params=
 comment2.target=void\ getInventory()
 comment3.params=item
 comment3.target=int\ useItem(int)
+comment3.text=\r\n\ whenever\ an\ item\ is\ used,\ its\ used\ here.\r\n
 comment4.params=item
 comment4.target=void\ addItem(Item)
+comment4.text=\ \r\n\ whenever\ an\ item\ is\ taken,\ this\ command\ runs.\r\n
 numComments=5

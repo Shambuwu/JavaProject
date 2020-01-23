@@ -1,3 +1,6 @@
+/** 
+ * Creates items which are further worked on in Game
+ */
 public class Item{
     private Potions potion;
 
