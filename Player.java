@@ -6,6 +6,7 @@ public class Player{
     private Inventory playerInventory = new Inventory();
     private int playerHealth;
     private int playerStrength;
+    private int playerMaxHealth;
     private int playerSpeed;
     private int gameLanguage = CommandWords.gameLanguage;
     private int playerXP;
@@ -81,6 +82,7 @@ public class Player{
         playerHealth = playerStats.getHealth();
         playerStrength = playerStats.getStrength();
         playerSpeed = playerStats.getSpeed();
+        playerMaxHealth = playerStats.getHealth();
     }
 
     public Stats getPlayerStats(){
@@ -91,8 +93,8 @@ public class Player{
  * if it is it will cap it at the maximum health the class has.
  */
     public void setPlayerHeal(int heal){
-        if((playerHealth += heal) > playerStats.getHealth()){
-            playerHealth = playerStats.getHealth();
+        if((playerHealth + heal) > playerMaxHealth){
+            playerHealth = playerMaxHealth;
         } else playerHealth += heal;
     }
 
@@ -128,7 +130,8 @@ public class Player{
         playerLevel += 1;
         playerStrength += (int) (playerLevel * 0.5);
         System.out.println("You leveled up!");
-        playerHealth = playerStats.getHealth();
+        playerMaxHealth += 10;
+        playerHealth = playerMaxHealth;
     }
 
     public int getPlayerLevel(){

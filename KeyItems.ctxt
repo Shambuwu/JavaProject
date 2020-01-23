@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=KeyItems
+comment1.params=description\ type
+comment1.target=KeyItems(java.lang.String,\ int)
+comment2.params=
+comment2.target=java.lang.String\ getDescription()
+comment3.params=
+comment3.target=int\ getType()
+numComments=4
