@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 import java.util.HashMap;
+import java.util.Stack;
 
 /**
  *  This class is the main class of the "World of Zuul" application. 
@@ -30,6 +31,7 @@ public class Game
     private Player player;
     public HashMap<Room, Integer> map;
     private Enemy enemy;
+    private Stack<Room> stack;
         
     /**
      * Create the game and initialise its internal map.
@@ -37,6 +39,7 @@ public class Game
     public Game() 
     {
         //Window window = new Window();
+        stack = new Stack<>();
         parser = new Parser();
         gameLanguage = CommandWords.gameLanguage;
         createRooms();
@@ -133,22 +136,22 @@ public class Game
             goRoom(command);
         }
         else if (commandWord.equals(commands[1])){
-            if (lastRoom != null){
-            
-               tempRoom    = currentRoom;
-               currentRoom = lastRoom;
-               lastRoom    = tempRoom;
-               checkRoom();
-            }    
-        } else if (commandWord.equals(commands[3])) {
+            goBack();
+            checkRoom();
+        } 
+        else if (commandWord.equals(commands[3])) {
             player.getPlayerInventory();
-        } else if (commandWord.equals(commands[4])) {
+        } 
+        else if (commandWord.equals(commands[4])) {
             useItem(command);
-        } else if (commandWord.equals(commands[5])){
+        } 
+        else if (commandWord.equals(commands[5])){
             lookAround();
-        } else if (commandWord.equals(commands[6])){
+        } 
+        else if (commandWord.equals(commands[6])){
             wantToQuit = quit(command);
-        }   else if (commandWord.equals(commands[7])){
+        }   
+        else if (commandWord.equals(commands[7])){
             check(command);
             
         } //else if(command.this.secondWord.equals(room)){
@@ -243,6 +246,12 @@ public class Game
          }
     }
 
+    public void goBack(){
+        if(stack.size() == 0) return;
+        currentRoom = stack.peek();
+        stack.pop();
+    }
+
     /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
@@ -278,6 +287,7 @@ public class Game
             System.out.println(Dialogue.response[gameLanguage][9]);
         }
         else {
+            stack.push(currentRoom);
             currentRoom = nextRoom;
             int randomEnemy = rand.nextInt(100);
             if(randomEnemy < 40){
