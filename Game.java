@@ -32,11 +32,11 @@ public class Game
     public HashMap<Room, Integer> map;
     private Enemy enemy;
     private Stack<Room> stack;
-        
+    private boolean disease = false;    
     /**
      * Create the game and initialise its internal map.
      */
-    public Game() 
+    public Game()   
     {
         //Window window = new Window();
         stack = new Stack<>();
@@ -141,6 +141,7 @@ public class Game
         System.out.println(Dialogue.response[gameLanguage][2]);
         System.out.println();
         checkRoom();
+        
     }
 
     /**
@@ -153,7 +154,7 @@ public class Game
         String[] commands = CommandWords.validCommands;
         
         boolean wantToQuit = false;
-
+        
         if(command.isUnknown()) {
             System.out.println(Dialogue.response[gameLanguage][3]);
             return false;
@@ -167,11 +168,13 @@ public class Game
             lastRoom = currentRoom;
             goRoom(command);
             spawnEnemy();
+            disease();
             checkRoom();
         }
         else if (commandWord.equals(commands[1])){
             if(goBack()){
                 spawnEnemy();
+                disease();
             }
             checkRoom();
         } 
@@ -349,13 +352,27 @@ public class Game
             }
             if(rand.nextInt(10) > 7){
                 Encounter fight = new Encounter(player, enemy);
-            } else if(steps == 5){
+                
+             
+            } else if(steps == 5000){
                 BossFight fight = new BossFight(player, EnemyStats.DEMON);
                 steps = 0;
             }
             steps++;
     }
-
+    private void disease(){
+        Random rand = new Random();
+        int randomEnemy = rand.nextInt(100);
+        if (rand.nextInt(100) >99){
+                if (disease == true){
+                    System.out.println(Dialogue.response[Game.gameLanguage][35]);
+                    System.out.println(Dialogue.response[Game.gameLanguage][36]);
+                    System.exit(0);
+                }  else { System.out.println(Dialogue.response[Game.gameLanguage][34]);
+                          disease = true;
+                        }   
+        }     
+    }
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
