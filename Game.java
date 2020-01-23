@@ -134,9 +134,13 @@ public class Game
         else if (commandWord.equals(commands[0])) {
             lastRoom = currentRoom;
             goRoom(command);
+            spawnEnemy();
+            checkRoom();
         }
         else if (commandWord.equals(commands[1])){
-            goBack();
+            if(goBack()){
+                spawnEnemy();
+            }
             checkRoom();
         } 
         else if (commandWord.equals(commands[3])) {
@@ -246,10 +250,11 @@ public class Game
          }
     }
 
-    public void goBack(){
-        if(stack.size() == 0) return;
+    public Boolean goBack(){
+        if(stack.size() == 0) return false;
         currentRoom = stack.peek();
         stack.pop();
+        return true;
     }
 
     /** 
@@ -289,7 +294,12 @@ public class Game
         else {
             stack.push(currentRoom);
             currentRoom = nextRoom;
-            int randomEnemy = rand.nextInt(100);
+        }
+    }
+
+    public void spawnEnemy(){
+        Random rand = new Random();
+        int randomEnemy = rand.nextInt(100);
             if(randomEnemy < 40){
                 enemy = new Enemy(EnemyStats.GOBLIN);
                 //System.out.println(Dialogue.response[Game.gameLanguage][22] + enemyStats.getName(0) + "!");
@@ -310,22 +320,6 @@ public class Game
                 steps = 0;
             }
             steps++;
-            System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
-            System.out.print(Dialogue.response[gameLanguage][11]);
-            if(currentRoom.northExit != null) {
-                System.out.print(Dialogue.direction[gameLanguage][0] + " ");
-            }
-            if(currentRoom.eastExit != null) {
-                System.out.print(Dialogue.direction[gameLanguage][1] + " ");
-            }
-            if(currentRoom.southExit != null) {
-                System.out.print(Dialogue.direction[gameLanguage][2] + " ");
-            }
-            if(currentRoom.westExit != null) {
-                System.out.print(Dialogue.direction[gameLanguage][3] + " ");
-            }
-            System.out.println();
-        }
     }
 
     /** 
@@ -365,12 +359,10 @@ public class Game
     /**
      * if check finds room as 2nd word, checks the room and displays the exits.
      */
-    private void checkRoom(){  
-       
-       
-     System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
-            System.out.print(Dialogue.response[gameLanguage][11]);
-            if(currentRoom.northExit != null) {
+    private void checkRoom(){     
+        System.out.println(Dialogue.response[gameLanguage][10] + currentRoom.getDescription());
+        System.out.print(Dialogue.response[gameLanguage][11]);
+        if(currentRoom.northExit != null) {
             System.out.print(Dialogue.direction[gameLanguage][0] + " ");
         }
         if(currentRoom.eastExit != null) {
@@ -383,8 +375,6 @@ public class Game
             System.out.print(Dialogue.direction[gameLanguage][3] + " ");
         }
         System.out.println();
-    
-    
     }
     
 }
