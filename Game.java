@@ -50,63 +50,63 @@ public class Game
      */
     private void createRooms()
     {
-        Room plaza, castle_h, graveyard, bridge, treasure, meadow, abandoned_r, abandoned_s, eastern_r, abandoned_h, castle_e, eastern_c, mysterious, northern_c, throne;
+        Room plaza, castleHall, graveyard, bridge, treasureRoom, meadow, abandonedRoad, abandonedSettlement, easternRoad, abandonedHouse, castleEntrance, easternCorridor, mysteriousRoom, northernCorridor, throneRoom;
         map = new HashMap<>();
       
         // create the rooms
         plaza = new Room(Dialogue.description[gameLanguage][0]);
-        castle_h = new Room(Dialogue.description[gameLanguage][1]);
+        castleHall = new Room(Dialogue.description[gameLanguage][1]);
         graveyard = new Room(Dialogue.description[gameLanguage][2]);
         bridge = new Room(Dialogue.description[gameLanguage][3]);
-        treasure = new Room(Dialogue.description[gameLanguage][4]);
+        treasureRoom = new Room(Dialogue.description[gameLanguage][4]);
         meadow = new Room (Dialogue.description[gameLanguage][5]);
-        abandoned_r =new Room ((Dialogue.description[gameLanguage][6]));
-        abandoned_s =new Room ((Dialogue.description[gameLanguage][7]));
-        eastern_r   =new Room ((Dialogue.description[gameLanguage][8]));
-        abandoned_h =new Room ((Dialogue.description[gameLanguage][9]));
-        castle_e    =new Room ((Dialogue.description[gameLanguage][10]));
-        eastern_c   =new Room ((Dialogue.description[gameLanguage][11]));
-        mysterious  =new Room ((Dialogue.description[gameLanguage][12]));
-        northern_c  =new Room ((Dialogue.description[gameLanguage][13]));
-        throne      =new Room ((Dialogue.description[gameLanguage][14]));
+        abandonedRoad = new Room ((Dialogue.description[gameLanguage][6]));
+        abandonedSettlement = new Room ((Dialogue.description[gameLanguage][7]));
+        easternRoad = new Room ((Dialogue.description[gameLanguage][8]));
+        abandonedHouse = new Room ((Dialogue.description[gameLanguage][9]));
+        castleEntrance = new Room ((Dialogue.description[gameLanguage][10]));
+        easternCorridor = new Room ((Dialogue.description[gameLanguage][11]));
+        mysteriousRoom = new Room ((Dialogue.description[gameLanguage][12]));
+        northernCorridor = new Room ((Dialogue.description[gameLanguage][14]));
+        throneRoom = new Room ((Dialogue.description[gameLanguage][15]));
             
         
         //set the rooms in the hashmap
         map.put(plaza, 0);    // main plaza
-        map.put(castle_h, 1);     // castle_h Hall 
+        map.put(castleHall, 1);     // castleHall Hall 
         map.put(graveyard, 2);     // graveyard
         map.put(bridge, 3);       // bridge
-        map.put(treasure, 4);    // Treasure Room
+        map.put(treasureRoom, 4);    // Treasure Room
         map.put(meadow, 5);
-        map.put(abandoned_r, 6);
-        map.put(abandoned_s, 7);
-        map.put(eastern_r, 8);
-        map.put(abandoned_h, 9);
-        map.put(castle_e, 10);
-        map.put(eastern_c, 11);
-        map.put(mysterious, 12);
-        map.put(treasure, 13);
-        map.put(northern_c, 14);
-        map.put(throne, 15);
+        map.put(abandonedRoad, 6);
+        map.put(abandonedSettlement, 7);
+        map.put(easternRoad, 8);
+        map.put(abandonedHouse, 9);
+        map.put(castleEntrance, 10);
+        map.put(easternCorridor, 11);
+        map.put(mysteriousRoom, 12);
+        map.put(treasureRoom, 13);
+        map.put(northernCorridor, 14);
+        map.put(throneRoom, 15);
         // initialise room exits
-        plaza.setExits(castle_e, eastern_r, null, bridge);
-        castle_h.setExits(northern_c, eastern_c, castle_e, null);
+        plaza.setExits(castleEntrance, easternRoad, null, bridge);
+        castleHall.setExits(northernCorridor, easternCorridor, castleEntrance, null);
         bridge.setExits(null,plaza, null,meadow);
         graveyard.setExits(meadow, null, null, null);
-        treasure.setExits(null, null, mysterious, null);
-        meadow.setExits(abandoned_r, bridge, graveyard, null);
-        abandoned_r.setExits(abandoned_s, null, meadow, null);
-        abandoned_s.setExits(null, null, abandoned_r, null);
-        eastern_r.setExits(null, abandoned_h, null, plaza);
-        abandoned_h.setExits(null, null, null, eastern_r);
-        castle_e.setExits(castle_h, null, plaza, null);
-        eastern_c.setExits(null, mysterious, null, castle_h);
-        mysterious.setExits(treasure, null, null, eastern_c);
-        treasure.setExits(null, null, mysterious, null);
-        northern_c.setExits(throne, null, castle_h, null);
-        throne.setExits(null, null, northern_c, null);
+        treasureRoom.setExits(null, null, mysteriousRoom, null);
+        meadow.setExits(abandonedRoad, bridge, graveyard, null);
+        abandonedRoad.setExits(abandonedSettlement, null, meadow, null);
+        abandonedSettlement.setExits(null, null, abandonedRoad, null);
+        easternRoad.setExits(null, abandonedHouse, null, plaza);
+        abandonedHouse.setExits(null, null, null, easternRoad);
+        castleEntrance.setExits(castleHall, null, plaza, null);
+        easternCorridor.setExits(null, mysteriousRoom, null, castleHall);
+        mysteriousRoom.setExits(treasureRoom, null, null, easternCorridor);
+        treasureRoom.setExits(null, null, mysteriousRoom, null);
+        northernCorridor.setExits(throneRoom, null, castleHall, null);
+        throneRoom.setExits(null, null, northernCorridor, null);
         
-        currentRoom = plaza;  // start game at main plaza
+        currentRoom = graveyard;  // start game in the graveyard
     }
 
     /**
@@ -349,7 +349,7 @@ public class Game
             }
             if(rand.nextInt(10) > 7){
                 Encounter fight = new Encounter(player, enemy);
-            } else if(steps == 5){
+            } else if(steps == 5000){
                 BossFight fight = new BossFight(player, EnemyStats.DEMON);
                 steps = 0;
             }
