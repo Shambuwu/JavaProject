@@ -1,7 +1,9 @@
 import java.util.Random;
 import java.util.Scanner;
 import java.lang.Math;
-
+/**
+ * This is where the combat takes place
+ */
 public class Encounter{
     private Player player;
     private EnemyStats enemyStats;
