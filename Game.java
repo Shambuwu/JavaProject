@@ -441,7 +441,9 @@ public class Game
         player.getInventory().addKeyItem(key);
         System.out.println("You obtained " + key.getKeyItemName());
     }
-    
+    /**
+     * if a bossroom is entered you will start the battle against the boss.
+     */
     private Boolean checkBossRoom(){ 
       if (map.get(currentRoom) == 7){
           BossFight fight = new BossFight(player, EnemyStats.DEMON);
@@ -455,6 +457,10 @@ public class Game
       }
       return false;
     }
+    /**
+     * specific rooms have guaranteed combat.
+     * the rooms are listed here.
+     */
     private boolean checkcombatRoom(){
      if (map.get(currentRoom) == 3){   
          enemy = new Enemy(EnemyStats.KOBOLD);
