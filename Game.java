@@ -49,7 +49,7 @@ public class Game
      * Create all the rooms and link their exits together.
      */
     private void createRooms()
-    {
+    { 
         Room plaza, castleHall, graveyard, bridge, treasureRoom, meadow, abandonedRoad, abandonedSettlement, easternRoad, abandonedHouse, castleEntrance, easternCorridor, mysteriousRoom, northernCorridor, throneRoom;
         map = new HashMap<>();
       
