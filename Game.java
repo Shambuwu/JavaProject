@@ -334,6 +334,7 @@ public class Game
             currentRoom = nextRoom;
         }
     }
+    
     /**
      * Starts a random encounter against an enemy.
      */
@@ -363,6 +364,7 @@ public class Game
         }
         steps++;
     }
+    
      /**
       * the player will get infected after a random amount of time.
       * This feature forces the player to actually finish the game before the time is up to make sure the player doesn't endlessly farm to defeat all bossess in 1 hit.
@@ -380,6 +382,7 @@ public class Game
                         }   
         }     
     }
+
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
@@ -396,6 +399,7 @@ public class Game
             return true;  // signal that we want to quit
         }
     }
+
     /**
      * "check" was entered. checks if there is a 2nd word.
      * if there is a 2nd word, brings it to the correct check.
@@ -416,6 +420,7 @@ public class Game
         else { System.out.println(Dialogue.response[gameLanguage][3]); 
         }
     }
+
     /**
      * if check finds room as second word, checks the room and displays the exits.
      */
@@ -442,6 +447,7 @@ public class Game
         player.getInventory().addKeyItem(key);
         System.out.println("You obtained " + key.getKeyItemName());
     }
+
     /**
      * if a bossroom is entered you will start the battle against the boss.
      */
@@ -458,6 +464,7 @@ public class Game
       }
       return false;
     }
+
     /**
      * specific rooms have guaranteed combat.
      * the rooms are listed here.
