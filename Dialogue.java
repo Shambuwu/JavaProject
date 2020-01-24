@@ -72,16 +72,39 @@ public class Dialogue{
 
     public static String[][][] view = 
     {
-        {{"There is a dead body by the entrance.", "A big open door invites you to travel beyond.", "You hear a cry echo in the distance."},
-         {"There is an empty throne in front of you. 'I wonder who once sat there.'", "There's a piercing smell present.", "It doesn't seem like there's anyone around."},
-         {"Dead flora is all over this garden.", "You spot a dog's corpse. 'Yuck!'", "You wonder if this garden has ever flourished."},
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."},
-         {"You see a bloody set of chains laying on the ground.", "You're almost unable to see through the darkness.", "'I wonder how many people have been imprisoned in this accursed dungeon.'"}},
+        {{"There is a dead body by the entrance.", "A big open door invites you to travel beyond.", "You hear a cry echo in the distance."},                //plaza
+         {"There is an empty throne in front of you. 'I wonder who once sat there.'", "There's a piercing smell present.", "It doesn't seem like there's anyone around."},  //castlehall
+         {"Dead flora is all over this garden.", "You spot a dog's corpse. 'Yuck!'", "You wonder if this garden has ever flourished."}, //graveyard
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //bridge
+         {"You see a bloody set of chains laying on the ground.", "You're almost unable to see through the darkness.", "'I wonder how many people have been imprisoned in this accursed dungeon.'"}, //treasureRoom
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //meadow
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //abandoned Road
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //Abandonded settlement
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //eastern road
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //abandonded house
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //castle entrance
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //easterncorridor
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //mysterious room
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //treasure room
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //northern corridor
+         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}}, //throneroom
+         
+        
 
-        {{"Er ligt een lijk bij de ingang.", "Een grote open deur nodigt je uit om verder te reizen.", "Je hoort een schreeuw in de verte."},
+        {{"Er ligt een lijk bij de ingang.", "Een grote open deur nodigt je uit om verder te reizen.", "Je hoort een schreeuw in de verte."},      
          {"Er staat een lege troon voor je. 'Ik vraag me af wie daar ooit heeft gezeten.'", "Er is een doordringende geur aanwezig.", "Het lijkt er niet op dat er nog iemand is."},
          {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
          {"Je staat op de hoge muur van dit koninkrijk.", "Je ziet een lege nederzetting in de verte.", "Klimop heeft een groot deel van de muur overgenomen."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
+         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
          {"Je ziet het skelet van een mens hangend aan een wandkettingen set.", "Je kan bijna niet door de duisternis heen zien.", "'Ik vraag me af hoeveel mensen hier gevangen zijn geweest.'"}}
     };
 

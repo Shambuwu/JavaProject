@@ -224,7 +224,8 @@ public class Game
      */
     public void lookAround(){
         Random rand = new Random();
-        System.out.println(Dialogue.view[gameLanguage][map.get(currentRoom)][rand.nextInt(2)]);
+        System.out.println(Dialogue.view[gameLanguage][map.get(currentRoom)][rand.nextInt(1)]);
+      // System.out.println( Dialogue.view[Game.gameLanguage][map.get(plaza)]);
     }
 
     /**
