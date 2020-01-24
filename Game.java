@@ -364,7 +364,10 @@ public class Game
         }
         steps++;
     }
-       
+     /**
+      * the player will get infected after a random amount of time.
+      * This feature forces the player to actually finish the game before the time is up to make sure the player doesn't endlessly farm to defeat all bossess in 1 hit.
+      */ 
     private void disease(){
         Random rand = new Random();
         int randomEnemy = rand.nextInt(100);

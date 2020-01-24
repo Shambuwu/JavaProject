@@ -13,6 +13,7 @@ comment12.target=void\ spawnEnemy()
 comment12.text=\r\n\ Starts\ a\ random\ encounter\ against\ an\ enemy.\r\n
 comment13.params=
 comment13.target=void\ disease()
+comment13.text=\r\n\ the\ player\ will\ get\ infected\ after\ a\ random\ amount\ of\ time.\r\n\ This\ feature\ forces\ the\ player\ to\ actually\ finish\ the\ game\ before\ the\ time\ is\ up\ to\ make\ sure\ the\ player\ doesn't\ endlessly\ farm\ to\ defeat\ all\ bossess\ in\ 1\ hit.\r\n
 comment14.params=command
 comment14.target=boolean\ quit(Command)
 comment14.text=\ \r\n\ "Quit"\ was\ entered.\ Check\ the\ rest\ of\ the\ command\ to\ see\r\n\ whether\ we\ really\ quit\ the\ game.\r\n\ @return\ true,\ if\ this\ command\ quits\ the\ game,\ false\ otherwise.\r\n
