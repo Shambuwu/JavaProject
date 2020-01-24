@@ -19,6 +19,14 @@ public enum EnemyStats{
     private String name;
     private int xpValue;
 
+    /**
+     * this sets all EnemyStats variables
+     * @param health set health
+     * @param strength set strength
+     * @param speed set speed
+     * @param name set name
+     * @param xp set xp value;
+     */
     EnemyStats(int health, int strength, int speed, String name, int xp){
         this.health = (int) (health * Game.gameDifficulty.getDifficulty());
         this.strength = (int) (strength * Game.gameDifficulty.getDifficulty());
@@ -27,22 +35,42 @@ public enum EnemyStats{
         this.xpValue = (int) (xp * Game.gameDifficulty.getDifficulty());
     }
 
+    /**
+     * returns the health stats
+     * @return returns an int
+     */
     public int getHealth(){
         return health;
     }
-
+    
+    /**
+     * returns the strength stats
+     * @return returns an int
+     */
     public int getStrength(){
         return strength;
     }
 
+    /**
+     * returns the speed stats
+     * @return returns an int
+     */
     public int getSpeed(){
         return speed;
     }
 
+    /**
+     * returns the name stats
+     * @return returns a string
+     */
     public String getName(int gameLanguage){
         return name;
     }    
     
+    /**
+     * returns the xp value stats
+     * @return returns an int
+     */
     public int getXPValue(){
         return xpValue;
     }

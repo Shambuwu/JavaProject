@@ -14,20 +14,39 @@ public enum Potions{
     private int value;
     private String name;
     private int type;
+
+    /**
+     * this sets all Potions values
+     * @param value the potion value
+     * @param name the potion name
+     * @param type the potion type
+     */
     Potions(int value, String name, int type){
         this.value = value;
         this.name = name;
         this.type = type;
     }
 
+    /**
+     * returns the potion value
+     * @return returns an int
+     */
     public int getPotionValue(){
         return value;
     }
 
+    /**
+     * returns the potion name
+     * @return returns a string
+     */
     public String getPotionName(){
         return name;
     }
 
+    /**
+     * returns the potion type
+     * @return returns an int
+     */
     public int getType(){
         return type;
     }

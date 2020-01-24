@@ -10,15 +10,29 @@ public enum Difficulty{
 
     private double difficulty;
     private String name;
+
+    /**
+     * This sets all difficulty values
+     * @param difficulty difficulty multiplier.
+     * @param name difficulty name.
+     */
     Difficulty(double difficulty, String name){
         this.difficulty = difficulty;
         this.name = name;
     }
 
+    /**
+     * this returns the difficulty multiplier
+     * @return returns a double
+     */
     public double getDifficulty(){
         return difficulty;
     }
 
+    /**
+     * this returns the difficulty name
+     * @return returns a string
+     */
     public String getDifficultyName(){
         return name;
     }

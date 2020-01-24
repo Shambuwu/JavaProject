@@ -7,6 +7,11 @@ public class Inventory{
     ArrayList<Item> inventory = new ArrayList<>();
     ArrayList<KeyItem> keyItemInventory = new ArrayList<>();
 
+    /**
+     * Inventory class constructor,
+     * this creates 3 new items and 
+     * places these in the player inventory.
+     */
     public Inventory(){
         Item item = new Item(Potions.HEALTH_POT);
         Item item1 = new Item(Potions.HEALTH_POT_STRONG);
@@ -16,6 +21,9 @@ public class Inventory{
         inventory.add(item2);
     }
 
+    /**
+     * this prints all items in the player inventory.
+     */
     public void getInventory(){
         int y = 1;
         if(inventory.size() != 0){
@@ -36,9 +44,12 @@ public class Inventory{
         else System.out.println(Dialogue.response[Game.gameLanguage][20]);
 
     }
-/**
- * whenever an item is used, its used here.
- */
+
+    /**
+     * this is removes the used item from the player inventory
+     * @param item this is needed to see which item the player wants to use
+     * @return this returns the value of the item used by the player
+     */
     public int useItem(int item){
         for(int i = 0; i < inventory.size(); i++){
             if(i == (item - 1)){
@@ -50,8 +61,10 @@ public class Inventory{
         }
         return 0;
     }
+
 /** 
- * whenever an item is taken, this command runs.
+ * whenever an item is taken, this method executes.
+ * @param item the item that gets added to the player inventory
  */
     public void addItem(Item item){
         if(inventory.size() >= 5){

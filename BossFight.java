@@ -4,6 +4,11 @@ import java.util.Scanner;
  * This class creates the Boss which is encoutered.
  */
 public class BossFight{
+    /**
+     * BossFight constructor, this initiates an encounter with a boss.
+     * @param player player object. Required to get all player stats.
+     * @param enemyStats this decides which boss the player will encounter.
+     */
     public BossFight(Player player, EnemyStats enemyStats){
         Enemy boss = new Enemy(enemyStats);
         Encounter bossFight = new Encounter(player, boss);
@@ -18,6 +23,9 @@ public class BossFight{
         }
     }
 
+    /**
+     * Check the player answer
+     */
     private void checkAnswer(){
         for(String answer : Dialogue.answer[Game.gameLanguage]){
             System.out.println("* " + answer);

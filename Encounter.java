@@ -13,6 +13,11 @@ public class Encounter{
 
     Random rand = new Random();
 
+    /**
+     * Initiate an encounter with an enemy.
+     * @param player this is required to get all player stats.
+     * @param enemy this decides which enemy the player will encounter
+     */
     public Encounter(Player player, Enemy enemy){
         this.player = player;
         this.playerStats = player.getPlayerStats();
@@ -24,7 +29,11 @@ public class Encounter{
         encounterStart();
     }
 
-    public boolean hasWonFight = false;    
+    public boolean hasWonFight = false;
+    /**
+     * This starts the turnbased encounter with the given player and enemy.
+     * @return returns a boolean.
+     */    
     public boolean encounterStart(){
         while(hasWonFight == false){
             if(hasWonFight == false){
@@ -59,6 +68,9 @@ public class Encounter{
         return true;
     }
 
+    /**
+     * This contains the choice the player makes. Attack or Run.
+     */
     public void playerChoice(){
         int choice = 0;
         System.out.println(Dialogue.combat[Game.gameLanguage][1]);
@@ -94,6 +106,9 @@ public class Encounter{
         }
     }
 
+    /**
+     * This decides how much damage the enemy attack does.
+     */
     private void enemyChoice(){
         int damage = enemy.getStrength() + rand.nextInt(10);
         System.out.println(Dialogue.combat[Game.gameLanguage][7] + enemy.getType() + Dialogue.combat[Game.gameLanguage][8]);
@@ -102,6 +117,9 @@ public class Encounter{
         scanner.nextLine();
     }
 
+    /**
+     * This decides if the player may escape combat or not.
+     */
     private boolean run(){
         System.out.println(Dialogue.combat[Game.gameLanguage][11]);
         scanner.nextLine();

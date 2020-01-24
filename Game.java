@@ -224,7 +224,7 @@ public class Game
      */
     public void lookAround(){
         Random rand = new Random();
-        System.out.println(Dialogue.view[gameLanguage][map.get(currentRoom)][rand.nextInt(1)]);
+        System.out.println(Dialogue.view[Game.gameLanguage][map.get(currentRoom)]);
       // System.out.println( Dialogue.view[Game.gameLanguage][map.get(plaza)]);
     }
 
@@ -264,6 +264,7 @@ public class Game
 
     /**
      * Use item in inventory
+     * @param command this is needed to see which item is supposed to be used
      */
     private void useItem(Command command){
         if(!command.hasSecondWord()){
@@ -283,6 +284,9 @@ public class Game
          }
     }
 
+    /**
+     * go one room back
+     */
     public Boolean goBack(){
         if(stack.size() == 0) return false;
         currentRoom = stack.peek();
@@ -293,6 +297,7 @@ public class Game
     /** 
      * Try to go in one direction. If there is an exit, enter
      * the new room, otherwise print an error message.
+     * @param command this is required to see which room to go to
      */
     int steps = 1;
     private void goRoom(Command command) 
@@ -378,6 +383,7 @@ public class Game
     /** 
      * "Quit" was entered. Check the rest of the command to see
      * whether we really quit the game.
+     * @param command this is required to see if the player put text after the command
      * @return true, if this command quits the game, false otherwise.
      */
     private boolean quit(Command command) 
@@ -393,6 +399,7 @@ public class Game
     /**
      * "check" was entered. checks if there is a 2nd word.
      * if there is a 2nd word, brings it to the correct check.
+     * @param command this is required to see what the player wants to check
      */
     private void check(Command command) {
         String[] commands = CommandWords.validCommands;

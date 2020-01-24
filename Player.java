@@ -31,6 +31,11 @@ public class Player{
         playerLevel = 1;
     }
 
+    /**
+     * this checks if the player's input is valid
+     * @param tempName player input
+     * @return returns true if the player input is valid, false if it's invalid.
+     */
     private boolean checkPlayerName(String tempName){
         System.out.println(Dialogue.response[gameLanguage][14] + tempName + "?");
         for(String answer : Dialogue.answer[gameLanguage]){
@@ -51,9 +56,10 @@ public class Player{
 
         return true;
     }
-/** 
- * Choose your class part.
- */
+
+    /** 
+     * Choose your class.
+     */
     public void setPlayerStats(){
         System.out.println(Dialogue.response[gameLanguage][17] + playerName + "?");
         int i = 1;
@@ -88,44 +94,76 @@ public class Player{
     public Stats getPlayerStats(){
         return playerStats;
     }
-/** 
- * checks if the players health is not above the max health for the class.
- * if it is it will cap it at the maximum health the class has.
- */
+
+    /** 
+     * checks if the players health is not above the max health for the class.
+     * if it is it will cap it at the maximum health the class has.
+     * @param heal how health the player is supposed to gain
+     */
     public void setPlayerHeal(int heal){
         if((playerHealth + heal) > playerMaxHealth){
             playerHealth = playerMaxHealth;
         } else playerHealth += heal;
     }
 
+    /**
+     * returns player health
+     * @return returns an int
+     */
     public int getPlayerHealth(){
         return playerHealth;
     }
 
+    /**
+     * sets player health depending on how much damage they take
+     * @param damage how much damage the player takes.
+     */
     public void setPlayerDamage(int damage){
         playerHealth -= damage;
     }
 
+    /**
+     * returns the player name
+     * @return returns a string
+     */
     public String getPlayerName(){
         return playerName;
     }
 
+    /**
+     * returns the player strength
+     * @return returns an int
+     */
     public int getPlayerStrength(){
         return playerStrength;
     }
 
+    /**
+     * this prints the player inventory.
+     */
     public void getPlayerInventory(){
         playerInventory.getInventory();
     }
 
+    /**
+     * this adds an item to the player inventory
+     * @param item the item that gets added
+     */
     public void addInventoryItem(Item item){
         playerInventory.addItem(item);
     }
 
+    /**
+     * this returns the player inventory object.
+     * @return return an Inventory
+     */
     public Inventory getInventory(){
         return playerInventory;
     }
 
+    /**
+     * This is used to add 1 level to the player.
+     */
     public void playerLevelUp(){
         playerLevel += 1;
         playerStrength += (int) (playerLevel * 0.5);
@@ -134,23 +172,43 @@ public class Player{
         playerHealth = playerMaxHealth;
     }
 
+    /**
+     * this returns the current player level
+     * @return returns an int
+     */
     public int getPlayerLevel(){
         return playerLevel;
     }
 
+    /**
+     * returns the player max health
+     * @return returns an int
+     */
     public int getPlayerMaxHealth(){
         return playerMaxHealth;
     }
 
+    /**
+     * returns the current player xp
+     * @return returns an int
+     */
     public int getPlayerXP(){
         return playerXP;
     }
     
+    /**
+     * sets the player xp
+     * @param xp how much xp is gained.
+     */
     public void setPlayerXP(int xp){
         playerXP += xp;
         while(!checkPlayerLevel()) checkPlayerLevel();
     }
 
+    /**
+     * this checks if the player xp is more than 100
+     * @return if player xp is more than 200, return false, else return true.
+     */
     private Boolean checkPlayerLevel(){
         if(playerXP > 100){
             playerLevelUp();
@@ -162,6 +220,9 @@ public class Player{
         return true;
     }
 
+    /**
+     * 
+     */
     public void playerAddKeyItem(KeyItem key){
         playerInventory.addKeyItem(key);
     }

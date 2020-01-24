@@ -70,42 +70,43 @@ public class Dialogue{
         {"Makkelijk", "Normaal", "Moeilijk"}
     };
 
-    public static String[][][] view = 
+    public static String[][] view = 
     {
-        {{"There is a dead body by the entrance.", "A big open door invites you to travel beyond.", "You hear a cry echo in the distance."},                //plaza
-         {"There is an empty throne in front of you. 'I wonder who once sat there.'", "There's a piercing smell present.", "It doesn't seem like there's anyone around."},  //castlehall
-         {"Dead flora is all over this garden.", "You spot a dog's corpse. 'Yuck!'", "You wonder if this garden has ever flourished."}, //graveyard
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //bridge
-         {"You see a bloody set of chains laying on the ground.", "You're almost unable to see through the darkness.", "'I wonder how many people have been imprisoned in this accursed dungeon.'"}, //treasureRoom
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //meadow
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //abandoned Road
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //Abandonded settlement
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //eastern road
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //abandonded house
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //castle entrance
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //easterncorridor
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //mysterious room
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //treasure room
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}, //northern corridor
-         {"You're on the high wall of this kingdom.", "You see an empty settlement in the distance.", "Ivy has taken over a great part of  the wall."}}, //throneroom
+        {"You're standing in the middle of a big plaza, must've been quite lively here once.",                //plaza
+         "This is the castle hall, it leads to two separate corridors.",  //castlehall
+         "You're standing in a graveyard. 'How did I get here?'", //graveyard
+         "This is a huge bridge spanning over a large body of water.", //bridge
+         "A mountain of gold stands before you.", //treasureRoom
+         "A huge open field is before you.", //meadow
+         "Merchants used these roads to travel to the castle", //abandoned Road
+         "You hear the cries of a demon.", //Abandonded settlement
+         "This road leads to the main plaza.", //eastern road
+         "It seems like this belonged to a great warrior.", //abandonded house
+         "This leads to the castle!", //castle entrance
+         "It's really dark, you can't see ahead", //easterncorridor
+         "It's pitch black. You feel like someone is watching you.", //mysterious room
+         "A mountain of gold stands before you", //treasure room
+         "You see light ahead. It's coming from the throneroom.", //northern corridor
+         "This once belonged to a great king.",}, //throneroom
          
         
 
-        {{"Er ligt een lijk bij de ingang.", "Een grote open deur nodigt je uit om verder te reizen.", "Je hoort een schreeuw in de verte."},      
-         {"Er staat een lege troon voor je. 'Ik vraag me af wie daar ooit heeft gezeten.'", "Er is een doordringende geur aanwezig.", "Het lijkt er niet op dat er nog iemand is."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Je staat op de hoge muur van dit koninkrijk.", "Je ziet een lege nederzetting in de verte.", "Klimop heeft een groot deel van de muur overgenomen."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Er ligt overal dode flora.", "Je ziet een dode hond. 'Jakkes!'", "Je vraagt je af of deze tuin ooit heeft gebloeid."},
-         {"Je ziet het skelet van een mens hangend aan een wandkettingen set.", "Je kan bijna niet door de duisternis heen zien.", "'Ik vraag me af hoeveel mensen hier gevangen zijn geweest.'"}}
+         {"Je staat op een groot plein. Het was hier vast ooit erg levendig.",                //plaza
+         "Dit is de kasteel hal, het leidt naar twee verschillende gangen.",  //castlehall
+         "Je staat in een begraafplaats. 'Hoe ben ik hier gekomen?'", //graveyard
+         "Dit is een enorme brug over een groot meer.", //bridge
+         "Een berg goud ligt voor je.", //treasureRoom
+         "Een groot open veld staat voor je.", //meadow
+         "Kooplieden gebruikten deze weg om naar het kasteel te komen.", //abandoned Road
+         "Je hoort het geschreeuw van een demoon.", //Abandonded settlement
+         "Deze weg leidt naar het grote plein.", //eastern road
+         "Het lijkt erop dat dit huis van een grote krijger was.", //abandonded house
+         "Dit leidt naar het kasteel!", //castle entrance
+         "Het is erg donker, je kan nauwelijks voor je uit kijken.", //easterncorridor
+         "Het is pikzwart, je hebt het gevoel dat iemand naar je kijkt.", //mysterious room
+         "Een berg goud ligt voor je.", //treasure room
+         "Je ziet ligt voor je, het komt van de troonkamer.", //northern corridor
+         "Deze troon was ooit van een geweldige koning.",} //throneroom
     };
 
 }
