@@ -24,7 +24,8 @@ public class Inventory{
                 System.out.println("" + y + ". " + i.getItemName());
                 y++;
             }
-        } else if(keyItemInventory.size() != 0){
+        }
+        if(keyItemInventory.size() != 0){
             int z = 1;
             System.out.println("Key items:");
             for(KeyItem i : keyItemInventory){

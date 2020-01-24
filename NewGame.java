@@ -20,7 +20,7 @@ import java.util.Stack;
  * @version 2016.02.29
  */
 
-public class Game 
+public class NewGame
 {
     private Parser parser;
     private Room currentRoom;
@@ -36,7 +36,7 @@ public class Game
     /**
      * Create the game and initialise its internal map.
      */
-    public Game()   
+    public NewGame()   
     {
         //Window window = new Window();
         stack = new Stack<>();
@@ -116,7 +116,7 @@ public class Game
     {
         
         player = new Player();
-        setDifficulty();
+        gameDifficulty = Difficulty.HARD;
         printWelcome();
 
         // Enter the main command loop.  Here we repeatedly read commands and

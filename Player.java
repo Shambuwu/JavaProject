@@ -161,4 +161,8 @@ public class Player{
         }
         return true;
     }
+
+    public void playerAddKeyItem(KeyItem key){
+        playerInventory.addKeyItem(key);
+    }
 }
